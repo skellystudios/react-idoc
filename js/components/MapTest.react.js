@@ -41,7 +41,10 @@ var MapTest = React.createClass({
       if (allPoints[key].visible) {
         var position = new google.maps.LatLng(allPoints[key].lat, allPoints[key].long);
         var visible = allPoints[key].visible;
-        markers.push(<Marker key={key} ref={key} position={position} visible={visible}/>);
+        markers.push(
+          <Marker key={key} ref={key} position={position} 
+                visible={visible} onClick={this._handle_marker_click.bind(this, key)} />
+          );
       }
     }
 
@@ -57,8 +60,9 @@ var MapTest = React.createClass({
     },
 
 
-  _handle_marker_click: function() {
-    console.log("click");
+  _handle_marker_click: function(key) {
+    console.log(key);
+    TodoActions.view(key)
   },
 
   _onChange: function() {

@@ -20,15 +20,17 @@ var Header = React.createClass({
     return (
       <header id="header">
         <h1>todos</h1>
-        <TodoTextInput
-          id="new-todo"
-          placeholder="What needs to be done??!"
-          onSave={this._onSave}
-        />
+        
       </header>
     );
   },
+  // <TodoTextInput
+        //   id="new-todo"
+        //   placeholder="What needs to be done??!"
+        //   onSave={this._onSave}
+        // />
 
+  
   /**
    * Event handler called within TodoTextInput.
    * Defining this here allows TodoTextInput to be used in multiple places

@@ -85,6 +85,12 @@ function hideAll() {
   }
 }
 
+function closeAll() {
+  for (var id in _todos) {
+    _todos[id].open = false;
+  }
+}
+
 
 var TodoStore = assign({}, EventEmitter.prototype, {
 
