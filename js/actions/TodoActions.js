@@ -10,7 +10,7 @@
  */
 
 var AppDispatcher = require('../dispatcher/AppDispatcher');
-var TodoConstants = require('../constants/TodoConstants');
+var Constants = require('../constants/Constants');
 
 var TodoActions = {
 
@@ -19,7 +19,7 @@ var TodoActions = {
    */
   create: function(text) {
     AppDispatcher.dispatch({
-      actionType: TodoConstants.TODO_CREATE,
+      actionType: Constants.TODO_CREATE,
       text: text
     });
   },
@@ -30,7 +30,7 @@ var TodoActions = {
    */
   updateText: function(id, text) {
     AppDispatcher.dispatch({
-      actionType: TodoConstants.TODO_UPDATE_TEXT,
+      actionType: Constants.TODO_UPDATE_TEXT,
       id: id,
       text: text
     });
@@ -43,8 +43,8 @@ var TodoActions = {
   toggleComplete: function(todo) {
     var id = todo.id;
     var actionType = todo.complete ?
-        TodoConstants.TODO_UNDO_COMPLETE :
-        TodoConstants.TODO_COMPLETE;
+        Constants.TODO_UNDO_COMPLETE :
+        Constants.TODO_COMPLETE;
 
     AppDispatcher.dispatch({
       actionType: actionType,
@@ -57,7 +57,7 @@ var TodoActions = {
    */
   toggleCompleteAll: function() {
     AppDispatcher.dispatch({
-      actionType: TodoConstants.TODO_TOGGLE_COMPLETE_ALL
+      actionType: Constants.TODO_TOGGLE_COMPLETE_ALL
     });
   },
 
@@ -66,7 +66,7 @@ var TodoActions = {
    */
   destroy: function(id) {
     AppDispatcher.dispatch({
-      actionType: TodoConstants.TODO_DESTROY,
+      actionType: Constants.TODO_DESTROY,
       id: id
     });
   },
@@ -76,7 +76,7 @@ var TodoActions = {
    */
   destroyCompleted: function() {
     AppDispatcher.dispatch({
-      actionType: TodoConstants.TODO_DESTROY_COMPLETED
+      actionType: Constants.TODO_DESTROY_COMPLETED
     });
   },
 
@@ -85,7 +85,7 @@ var TodoActions = {
    */
   view: function(id) {
     AppDispatcher.dispatch({
-      actionType: TodoConstants.VIEW_LOCATION,
+      actionType: Constants.VIEW_LOCATION,
       id: id
     });
   },
@@ -95,7 +95,7 @@ var TodoActions = {
    */
   openVideo: function(id) {
     AppDispatcher.dispatch({
-      actionType: TodoConstants.TODO_OPEN_VIDEO,
+      actionType: Constants.TODO_OPEN_VIDEO,
       id: id
     });
   },

@@ -9,9 +9,9 @@
 
 var React = require('react');
 
-var TodoApp = require('./components/TodoApp.react');
+var IDocApp = require('./components/IDocApp.react');
 
 React.render(
-  <TodoApp />,
+  <IDocApp />,
   document.getElementById('todoapp')
 );

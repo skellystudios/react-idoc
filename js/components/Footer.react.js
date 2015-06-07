@@ -14,23 +14,23 @@ var TodoActions = require('../actions/TodoActions');
 var Footer = React.createClass({
 
   propTypes: {
-    allTodos: ReactPropTypes.object.isRequired
+    allItems: ReactPropTypes.object.isRequired
   },
 
   /**
    * @return {object}
    */
   render: function() {
-    var allTodos = this.props.allTodos;
-    var total = Object.keys(allTodos).length;
+    var allItems = this.props.allItems;
+    var total = Object.keys(allItems).length;
 
     if (total === 0) {
       return null;
     }
 
     var completed = 0;
-    for (var key in allTodos) {
-      if (allTodos[key].complete) {
+    for (var key in allItems) {
+      if (allItems[key].complete) {
         completed++;
       }
     }

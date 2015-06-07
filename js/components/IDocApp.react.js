@@ -9,40 +9,40 @@
 
 /**
  * This component operates as a "Controller-View".  It listens for changes in
- * the TodoStore and passes the new data to its children.
+ * the Store and passes the new data to its children.
  */
 
 var Footer = require('./Footer.react');
 var Header = require('./Header.react');
 var Buttons = require('./Buttons.react');
 var React = require('react');
-var TodoStore = require('../stores/TodoStore');
+var Store = require('../stores/Store');
 var DisplayBox = require('./DisplayBox.react');
 var MapTest = require('./MapTest.react')
 /**
- * Retrieve the current TODO data from the TodoStore
+ * Retrieve the current TODO data from the Store
  */
-function getTodoState() {
+function getStoreState() {
   return {
-    allTodos: TodoStore.getAll(),
-    areAllComplete: TodoStore.areAllComplete(),
-    activeLocation: TodoStore.getActive(),
-    openVideos: TodoStore.getOpen(),
+    allItems: Store.getAll(),
+    areAllComplete: Store.areAllComplete(),
+    activeLocation: Store.getActive(),
+    openVideos: Store.getOpen(),
   };
 }
 
 var TodoApp = React.createClass({
 
   getInitialState: function() {
-    return getTodoState();
+    return getStoreState();
   },
 
   componentDidMount: function() {
-    TodoStore.addChangeListener(this._onChange);
+    Store.addChangeListener(this._onChange);
   },
 
   componentWillUnmount: function() {
-    TodoStore.removeChangeListener(this._onChange);
+    Store.removeChangeListener(this._onChange);
   },
 
   /**
@@ -50,33 +50,33 @@ var TodoApp = React.createClass({
    */
   render: function() {
     return (
-      
+
       <div><DisplayBox
           item={this.state.openVideos}
         />
       <MapTest
-          allPoints={this.state.allTodos}
+          allPoints={this.state.allItems}
           googleMapsApi={google.maps}
         />
       
         <Header />
         <Buttons
-          allTodos={this.state.allTodos}
+          allItems={this.state.allItems}
           areAllComplete={this.state.areAllComplete}
         />
          
         
-        <Footer allTodos={this.state.allTodos} />
+        <Footer allItems={this.state.allItems} />
        
       </div>
   	);
   },
 
   /**
-   * Event handler for 'change' events coming from the TodoStore
+   * Event handler for 'change' events coming from the Store
    */
   _onChange: function() {
-    this.setState(getTodoState());
+    this.setState(getStoreState());
   }
 
 });

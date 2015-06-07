@@ -6,33 +6,33 @@
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * TodoStore-test
+ * Store-test
  */
 
-jest.dontMock('../../constants/TodoConstants');
-jest.dontMock('../TodoStore');
+jest.dontMock('../../constants/Constants');
+jest.dontMock('../Store');
 jest.dontMock('object-assign');
 
-describe('TodoStore', function() {
+describe('Store', function() {
 
-  var TodoConstants = require('../../constants/TodoConstants');
+  var Constants = require('../../constants/Constants');
   var AppDispatcher;
-  var TodoStore;
+  var Store;
   var callback;
 
   // mock actions
   var actionTodoCreate = {
-    actionType: TodoConstants.TODO_CREATE,
+    actionType: Constants.TODO_CREATE,
     text: 'foo'
   };
   var actionTodoDestroy = {
-    actionType: TodoConstants.TODO_DESTROY,
+    actionType: Constants.TODO_DESTROY,
     id: 'replace me in test'
   };
 
   beforeEach(function() {
     AppDispatcher = require('../../dispatcher/AppDispatcher');
-    TodoStore = require('../TodoStore');
+    Store = require('../Store');
     callback = AppDispatcher.register.mock.calls[0][0];
   });
 
@@ -41,13 +41,13 @@ describe('TodoStore', function() {
   });
 
   it('should initialize with no to-do items', function() {
-    var all = TodoStore.getAll();
+    var all = Store.getAll();
     expect(all).toEqual({});
   });
 
   it('creates a to-do item', function() {
     callback(actionTodoCreate);
-    var all = TodoStore.getAll();
+    var all = Store.getAll();
     var keys = Object.keys(all);
     expect(keys.length).toBe(1);
     expect(all[keys[0]].text).toEqual('foo');
@@ -55,7 +55,7 @@ describe('TodoStore', function() {
 
   it('destroys a to-do item', function() {
     callback(actionTodoCreate);
-    var all = TodoStore.getAll();
+    var all = Store.getAll();
     var keys = Object.keys(all);
     expect(keys.length).toBe(1);
     actionTodoDestroy.id = keys[0];
@@ -68,23 +68,23 @@ describe('TodoStore', function() {
     for (; i < 3; i++) {
       callback(actionTodoCreate);
     }
-    expect(Object.keys(TodoStore.getAll()).length).toBe(3);
-    expect(TodoStore.areAllComplete()).toBe(false);
+    expect(Object.keys(Store.getAll()).length).toBe(3);
+    expect(Store.areAllComplete()).toBe(false);
 
-    var all = TodoStore.getAll();
+    var all = Store.getAll();
     for (key in all) {
       callback({
-        actionType: TodoConstants.TODO_COMPLETE,
+        actionType: Constants.TODO_COMPLETE,
         id: key
       });
     }
-    expect(TodoStore.areAllComplete()).toBe(true);
+    expect(Store.areAllComplete()).toBe(true);
 
     callback({
-      actionType: TodoConstants.TODO_UNDO_COMPLETE,
+      actionType: Constants.TODO_UNDO_COMPLETE,
       id: key
     });
-    expect(TodoStore.areAllComplete()).toBe(false);
+    expect(Store.areAllComplete()).toBe(false);
   });
 
 });

@@ -6,7 +6,7 @@ var Marker = require("react-google-maps").Marker
 var ReactPropTypes = React.PropTypes;
 var TodoActions = require('../actions/TodoActions');
 var TodoTextInput = require('./TodoTextInput.react');
-var TodoStore = require('../stores/TodoStore');
+var Store = require('../stores/Store');
 
 var cx = require('react/lib/cx');
 
@@ -25,11 +25,11 @@ var MapTest = React.createClass({
   },
 
   componentDidMount: function() {
-    TodoStore.addChangeListener(this._onChange);
+    Store.addChangeListener(this._onChange);
   },
 
   componentWillUnmount: function() {
-    TodoStore.removeChangeListener(this._onChange);
+    Store.removeChangeListener(this._onChange);
   },
 
 
