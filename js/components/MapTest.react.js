@@ -62,7 +62,7 @@ var MapTest = React.createClass({
 
   _handle_marker_click: function(key) {
     console.log(key);
-    TodoActions.view(key)
+    TodoActions.openVideo(key);
   },
 
   _onChange: function() {

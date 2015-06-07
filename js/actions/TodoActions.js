@@ -80,15 +80,25 @@ var TodoActions = {
     });
   },
 
-    /**
-   * Delete all the completed ToDos
+  /**
+   * Makes the marker visible
    */
   view: function(id) {
     AppDispatcher.dispatch({
       actionType: TodoConstants.VIEW_LOCATION,
       id: id
     });
-  }
+  },
+
+  /**
+   * Opens the video associated with a particular marker
+   */
+  openVideo: function(id) {
+    AppDispatcher.dispatch({
+      actionType: TodoConstants.TODO_OPEN_VIDEO,
+      id: id
+    });
+  },
 
 };
 

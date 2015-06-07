@@ -124,6 +124,18 @@ var TodoStore = assign({}, EventEmitter.prototype, {
     return true;
   },
 
+  /** 
+   * Return the video location that is open, if any
+   */
+  getOpen: function() {
+    for (var id in _todos) {
+      if (_todos[id].open) {
+        return _todos[id];
+      }
+    }
+    return true;
+  },
+
   emitChange: function() {
     this.emit(CHANGE_EVENT);
   },
@@ -199,7 +211,14 @@ AppDispatcher.register(function(action) {
       TodoStore.emitChange();
       break;
 
+    case TodoConstants.TODO_OPEN_VIDEO:
+      closeAll();
+      update(action.id, {"open": true});
+      TodoStore.emitChange();
+      break;
+
     default:
+      closeAll();
       // no op
   }
 });

@@ -2,6 +2,7 @@ html,
 body {
 	margin: 0;
 	padding: 0;
+	height: 100%;
 }
 
 button {
@@ -16,8 +17,8 @@ body {
 	line-height: 1.4em;
 	background: #eaeaea url('bg.png');
 	color: #4d4d4d;
-	width: 80%;
-	margin: 0 auto;
+	/*width: 80%;
+	margin: 0 auto;*/
 	-webkit-font-smoothing: antialiased;
 	-moz-font-smoothing: antialiased;
 	-ms-font-smoothing: antialiased;
@@ -30,11 +31,24 @@ input[type="checkbox"] {
   outline: none;
 }
 
+.display-box {
+  float: left;
+  height: 800%;
+  left: 0px;
+  background-color: #eee;
+  z-index: 100000000;
+  position: absolute;
+  margin: 10px;
+  border: solid 5px #ddd;
+  width: 500px;
+}
+
 #todoapp {
-	height: 500px;
+	/*height: 500px;*/
+	height: 100%;
 	background: #fff;
 	background: rgba(255, 255, 255, 0.9);
-	margin: 130px 0 40px 0;
+	/*margin: 130px 0 40px 0;*/
 	border: 1px solid #ccc;
 	position: relative;
 	border-top-left-radius: 2px;

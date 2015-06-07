@@ -26,7 +26,8 @@ function getTodoState() {
   return {
     allTodos: TodoStore.getAll(),
     areAllComplete: TodoStore.areAllComplete(),
-    activeLocation: TodoStore.getActive()
+    activeLocation: TodoStore.getActive(),
+    openVideos: TodoStore.getOpen(),
   };
 }
 
@@ -49,7 +50,10 @@ var TodoApp = React.createClass({
    */
   render: function() {
     return (
-      <div><p></p>
+      
+      <div><DisplayBox
+          item={this.state.openVideos}
+        />
       <MapTest
           allPoints={this.state.allTodos}
           googleMapsApi={google.maps}
@@ -60,9 +64,7 @@ var TodoApp = React.createClass({
           allTodos={this.state.allTodos}
           areAllComplete={this.state.areAllComplete}
         />
-         <DisplayBox
-          item={this.state.activeLocation}
-        />
+         
         
         <Footer allTodos={this.state.allTodos} />
        

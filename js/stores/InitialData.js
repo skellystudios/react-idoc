@@ -6,7 +6,7 @@ var InitialData = {
 		"visible": true,	
 		"lat": -25.53882,
 		"long": 131.644922,
-		"viewing": false,
+		"open": true,
 	},
 	"2" : {
 		"id": "2",
@@ -15,7 +15,7 @@ var InitialData = {
 		"visible": false,	
 		"lat": -25.463882,
 		"long": 131.144922,
-		"viewing": false,
+		"open": false,
 	},
 };
 
