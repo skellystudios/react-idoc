@@ -1,9 +1,7 @@
 var React = require('react');
 var ReactPropTypes = React.PropTypes;
-var TodoActions = require('../actions/TodoActions');
-var GoogleMapsMixin = require("react-google-maps").GoogleMapsMixin;
+var Actions = require('../actions/Actions');
 var YouTube = require('react-youtube');
-var cx = require('react/lib/cx');
 
 var DisplayBox = React.createClass({
 

@@ -22,11 +22,11 @@ describe('Store', function() {
 
   // mock actions
   var actionTodoCreate = {
-    actionType: Constants.TODO_CREATE,
+    actionType: Constants.ITEM_CREATE,
     text: 'foo'
   };
   var actionTodoDestroy = {
-    actionType: Constants.TODO_DESTROY,
+    actionType: Constants.ITEM_DESTROY,
     id: 'replace me in test'
   };
 
@@ -74,14 +74,14 @@ describe('Store', function() {
     var all = Store.getAll();
     for (key in all) {
       callback({
-        actionType: Constants.TODO_COMPLETE,
+        actionType: Constants.ITEM_COMPLETE,
         id: key
       });
     }
     expect(Store.areAllComplete()).toBe(true);
 
     callback({
-      actionType: Constants.TODO_UNDO_COMPLETE,
+      actionType: Constants.ITEM_UNDO_COMPLETE,
       id: key
     });
     expect(Store.areAllComplete()).toBe(false);

@@ -4,13 +4,12 @@ var GoogleMapsMixin = require("react-google-maps").GoogleMapsMixin;
 var Map = require("react-google-maps").Map
 var Marker = require("react-google-maps").Marker
 var ReactPropTypes = React.PropTypes;
-var TodoActions = require('../actions/TodoActions');
-var TodoTextInput = require('./TodoTextInput.react');
+var Actions = require('../actions/Actions');
 var Store = require('../stores/Store');
 
 var cx = require('react/lib/cx');
 
-var MapTest = React.createClass({
+var IDocMap = React.createClass({
 
   propTypes: {
   },
@@ -62,7 +61,7 @@ var MapTest = React.createClass({
 
   _handle_marker_click: function(key) {
     console.log(key);
-    TodoActions.openVideo(key);
+    Actions.openVideo(key);
   },
 
   _onChange: function() {
@@ -71,7 +70,7 @@ var MapTest = React.createClass({
 
 });
 
-module.exports = MapTest;
+module.exports = IDocMap;
 
 
 

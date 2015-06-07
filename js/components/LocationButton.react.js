@@ -9,15 +9,14 @@
 
 var React = require('react');
 var ReactPropTypes = React.PropTypes;
-var TodoActions = require('../actions/TodoActions');
-var TodoTextInput = require('./TodoTextInput.react');
+var Actions = require('../actions/Actions');
 
 var cx = require('react/lib/cx');
 
 var LocationButton = React.createClass({
 
   propTypes: {
-   todo: ReactPropTypes.object.isRequired
+   item: ReactPropTypes.object.isRequired
   },
 
   getInitialState: function() {
@@ -29,23 +28,23 @@ var LocationButton = React.createClass({
    * @return {object}
    */
   render: function() {
-    var todo = this.props.todo;
+    var item = this.props.item;
 
     return (
       <li
         className={cx({
-          'visible': todo.visible
+          'visible': item.visible
         })}
-        key={todo.id}>
-          <button className="view" onClick={this._onClickView} text="{todo.text}">
-          {todo.text}
+        key={item.id}>
+          <button className="view" onClick={this._onClickView} text="{item.text}">
+          {item.text}
           </button>
       </li>
     );
   },
 
   _onClickView: function() {
-    TodoActions.view(this.props.todo.id);
+    Actions.view(this.props.item.id);
   }
 
 });

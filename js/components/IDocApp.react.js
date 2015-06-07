@@ -1,26 +1,15 @@
 /**
- * Copyright (c) 2014-2015, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- */
-
-/**
  * This component operates as a "Controller-View".  It listens for changes in
  * the Store and passes the new data to its children.
  */
 
-var Footer = require('./Footer.react');
-var Header = require('./Header.react');
 var Buttons = require('./Buttons.react');
 var React = require('react');
 var Store = require('../stores/Store');
 var DisplayBox = require('./DisplayBox.react');
-var MapTest = require('./MapTest.react')
+var IDocMap = require('./IDocMap.react')
 /**
- * Retrieve the current TODO data from the Store
+ * Retrieve the current data from the Store
  */
 function getStoreState() {
   return {
@@ -31,7 +20,7 @@ function getStoreState() {
   };
 }
 
-var TodoApp = React.createClass({
+var IDocApp = React.createClass({
 
   getInitialState: function() {
     return getStoreState();
@@ -54,20 +43,14 @@ var TodoApp = React.createClass({
       <div><DisplayBox
           item={this.state.openVideos}
         />
-      <MapTest
+      <IDocMap
           allPoints={this.state.allItems}
           googleMapsApi={google.maps}
         />
-      
-        <Header />
         <Buttons
           allItems={this.state.allItems}
           areAllComplete={this.state.areAllComplete}
-        />
-         
-        
-        <Footer allItems={this.state.allItems} />
-       
+        />  
       </div>
   	);
   },
@@ -81,4 +64,4 @@ var TodoApp = React.createClass({
 
 });
 
-module.exports = TodoApp;
+module.exports = IDocApp;

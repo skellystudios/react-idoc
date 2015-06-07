@@ -1,15 +1,6 @@
-/**
- * Copyright (c) 2014-2015, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- */
-
 var React = require('react');
 var ReactPropTypes = React.PropTypes;
-var TodoActions = require('../actions/TodoActions');
+var Actions = require('../actions/Actions');
 var LocationButton = require('./LocationButton.react');
 
 var MainSection = React.createClass({
@@ -23,32 +14,24 @@ var MainSection = React.createClass({
    */
   render: function() {
     // This section should be hidden by default
-    // and shown when there are todos.
+    // and shown when there are items.
     if (Object.keys(this.props.allItems).length < 1) {
       return null;
     }
 
     var allItems = this.props.allItems;
-    var todos = [];
+    var items = [];
 
     for (var key in allItems) {
-      todos.push(<LocationButton key={key} todo={allItems[key]} />);
+      items.push(<LocationButton key={key} item={allItems[key]} />);
     }
 
     return (
       <section id="main">
-        <ul id="todo-list">{todos}</ul>
+        <ul id="item-list">{items}</ul>
       </section>
     );
   },
-
-  /**
-   * Event handler to mark all TODOs as complete
-   */
-  _onToggleCompleteAll: function() {
-    TodoActions.toggleCompleteAll();
-  }
-
 
 
 });

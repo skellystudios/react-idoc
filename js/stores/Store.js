@@ -160,7 +160,7 @@ AppDispatcher.register(function(action) {
   var text;
 
   switch(action.actionType) {
-    case Constants.TODO_CREATE:
+    case Constants.ITEM_CREATE:
       text = action.text.trim();
       if (text !== '') {
         create(text);
@@ -168,7 +168,7 @@ AppDispatcher.register(function(action) {
       }
       break;
 
-    case Constants.TODO_TOGGLE_COMPLETE_ALL:
+    case Constants.ITEM_TOGGLE_COMPLETE_ALL:
       if (Store.areAllComplete()) {
         updateAll({complete: false});
       } else {
@@ -177,17 +177,17 @@ AppDispatcher.register(function(action) {
       Store.emitChange();
       break;
 
-    case Constants.TODO_UNDO_COMPLETE:
+    case Constants.ITEM_UNDO_COMPLETE:
       update(action.id, {complete: false});
       Store.emitChange();
       break;
 
-    case Constants.TODO_COMPLETE:
+    case Constants.ITEM_COMPLETE:
       update(action.id, {complete: true});
       Store.emitChange();
       break;
 
-    case Constants.TODO_UPDATE_TEXT:
+    case Constants.ITEM_UPDATE_TEXT:
       text = action.text.trim();
       if (text !== '') {
         update(action.id, {text: text});
@@ -195,12 +195,12 @@ AppDispatcher.register(function(action) {
       }
       break;
 
-    case Constants.TODO_DESTROY:
+    case Constants.ITEM_DESTROY:
       destroy(action.id);
       Store.emitChange();
       break;
 
-    case Constants.TODO_DESTROY_COMPLETED:
+    case Constants.ITEM_DESTROY_COMPLETED:
       destroyCompleted();
       Store.emitChange();
       break;
@@ -211,7 +211,7 @@ AppDispatcher.register(function(action) {
       Store.emitChange();
       break;
 
-    case Constants.TODO_OPEN_VIDEO:
+    case Constants.ITEM_OPEN_VIDEO:
       closeAll();
       update(action.id, {"open": true});
       Store.emitChange();

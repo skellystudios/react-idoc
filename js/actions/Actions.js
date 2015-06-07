@@ -6,20 +6,20 @@
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * TodoActions
+ * Actions
  */
 
 var AppDispatcher = require('../dispatcher/AppDispatcher');
 var Constants = require('../constants/Constants');
 
-var TodoActions = {
+var Actions = {
 
   /**
-   * @param  {string} text
+   * @param  {string} text 
    */
   create: function(text) {
     AppDispatcher.dispatch({
-      actionType: Constants.TODO_CREATE,
+      actionType: Constants.ITEM_CREATE,
       text: text
     });
   },
@@ -30,7 +30,7 @@ var TodoActions = {
    */
   updateText: function(id, text) {
     AppDispatcher.dispatch({
-      actionType: Constants.TODO_UPDATE_TEXT,
+      actionType: Constants.ITEM_UPDATE_TEXT,
       id: id,
       text: text
     });
@@ -43,8 +43,8 @@ var TodoActions = {
   toggleComplete: function(todo) {
     var id = todo.id;
     var actionType = todo.complete ?
-        Constants.TODO_UNDO_COMPLETE :
-        Constants.TODO_COMPLETE;
+        Constants.ITEM_UNDO_COMPLETE :
+        Constants.ITEM_COMPLETE;
 
     AppDispatcher.dispatch({
       actionType: actionType,
@@ -57,7 +57,7 @@ var TodoActions = {
    */
   toggleCompleteAll: function() {
     AppDispatcher.dispatch({
-      actionType: Constants.TODO_TOGGLE_COMPLETE_ALL
+      actionType: Constants.ITEM_TOGGLE_COMPLETE_ALL
     });
   },
 
@@ -66,7 +66,7 @@ var TodoActions = {
    */
   destroy: function(id) {
     AppDispatcher.dispatch({
-      actionType: Constants.TODO_DESTROY,
+      actionType: Constants.ITEM_DESTROY,
       id: id
     });
   },
@@ -76,7 +76,7 @@ var TodoActions = {
    */
   destroyCompleted: function() {
     AppDispatcher.dispatch({
-      actionType: Constants.TODO_DESTROY_COMPLETED
+      actionType: Constants.ITEM_DESTROY_COMPLETED
     });
   },
 
@@ -95,11 +95,11 @@ var TodoActions = {
    */
   openVideo: function(id) {
     AppDispatcher.dispatch({
-      actionType: Constants.TODO_OPEN_VIDEO,
+      actionType: Constants.ITEM_OPEN_VIDEO,
       id: id
     });
   },
 
 };
 
-module.exports = TodoActions;
+module.exports = Actions;
