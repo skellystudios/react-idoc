@@ -57,8 +57,7 @@ var IDocApp = React.createClass({
           allItems={this.state.allItems}
           areAllComplete={this.state.areAllComplete}
         />  
-        <Timer key={this.state.openVideos.id} limit={this.state.openVideos.id} start={Date.now()} />
-      </div>
+       </div>
   	);
   },
 

@@ -14,6 +14,31 @@ var DisplayBox = React.createClass({
     };
   },
 
+  componentDidMount: function(){
+        // componentDidMount is called by react when the component 
+        // has been rendered on the page. We can set the interval here:
+       this.start();
+       // TODO: remove this
+    },
+
+    componentWillUnmount: function(){
+        // This method is called immediately before the component is removed
+        // from the page and destroyed. We can clear the interval here:
+        this.stop();
+    },
+
+    start: function(){
+        this.timer = setInterval(this.tick, 1000);
+    },
+
+    stop: function(){
+        clearInterval(this.timer);
+    },
+
+    tick: function(){
+        Actions.tick()
+    },
+
   /**
    * @return {object}
    */
@@ -41,9 +66,9 @@ var DisplayBox = React.createClass({
             // id={string}             // defaults -> 'react-yt-player'
             opts={opts}              // defaults -> {}
             // onReady={func}          // defaults -> noop
-            // onPlay={func}           // defaults -> noop
-            // onPause={func}          // defaults -> noop
-            // onEnd={func}            // defaults -> noop
+            onPlay={this.start}           // defaults -> noop
+            onPause={this.stop}          // defaults -> noop
+            onEnd={this.stop}            // defaults -> noop
       />
       </div>
     );

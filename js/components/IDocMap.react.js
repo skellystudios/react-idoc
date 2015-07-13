@@ -31,6 +31,17 @@ var IDocMap = React.createClass({
     Store.removeChangeListener(this._onChange);
   },
 
+  // shouldComponentUpdate: function(nextProps, nextState) {
+  //   var oldPoints = this.props.allPoints;
+  //   var newPoints = nextProps.allPoints
+  //   for (var key in oldPoints) {
+  //     if (oldPoints[key].visible !== newPoints[key].visible){
+  //       console.log("true");
+  //       return true;
+  //     }
+  //   }
+  //   return false;
+  // },
 
   render: function() {
 
@@ -39,7 +50,7 @@ var IDocMap = React.createClass({
     for (var key in allPoints) {
       if (allPoints[key].visible) {
         var position = new google.maps.LatLng(allPoints[key].lat, allPoints[key].long);
-        var visible = allPoints[key].visible;
+        var visible = allPoints[key].visible; 
         markers.push(
           <Marker key={key} ref={key} position={position} 
                 visible={visible} onClick={this._handle_marker_click.bind(this, key)} />

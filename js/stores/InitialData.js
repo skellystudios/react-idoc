@@ -7,6 +7,7 @@ var InitialData = {
 		"lat": 51.518507,
 		"long": -0.120933,
 		"open": true,
+		"starts": 10,
 	},
 	"2" : {
 		"id": "2",
@@ -16,6 +17,17 @@ var InitialData = {
 		"lat": 51.551507,
 		"long": -0.120933,
 		"open": false,
+		"starts": 15,
+	},
+	"3" : {
+		"id": "3",
+		"text": "Second Marker",
+		"complete": false,
+		"visible": true,	
+		"lat": 51.531707,
+		"long": -0.121133,
+		"open": false,
+		"starts": 20
 	},
 };
 

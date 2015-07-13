@@ -100,6 +100,15 @@ var Actions = {
     });
   },
 
+  /**
+   * Moved the global timer on by one tick
+   */
+  tick: function() {
+    AppDispatcher.dispatch({
+      actionType: Constants.TICK,
+    });
+  },
+
 };
 
 module.exports = Actions;

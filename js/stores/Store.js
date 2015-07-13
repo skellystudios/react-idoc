@@ -16,8 +16,8 @@ var assign = require('object-assign');
 
 var CHANGE_EVENT = 'change';
 
-// var _todos = {};
-var _todos = require('../stores/InitialData');
+// var _items = {};
+var _items = require('../stores/InitialData');
 var globalTime = 10;
 
 /**
@@ -29,12 +29,12 @@ function create(text) {
   // server-side storage.
   // Using the current timestamp + random number in place of a real id.
   var id = (+new Date() + Math.floor(Math.random() * 999999)).toString(36);
-  _todos[id] = {
+  _items[id] = {
     id: id,
     complete: false,
     text: text
   };
-  window.debug = _todos;
+  window.debug = _items;
 }
 
 /**
@@ -44,7 +44,7 @@ function create(text) {
  *     updated.
  */
 function update(id, updates) {
-  _todos[id] = assign({}, _todos[id], updates);
+  _items[id] = assign({}, _items[id], updates);
 }
 
 /**
@@ -55,7 +55,7 @@ function update(id, updates) {
 
  */
 function updateAll(updates) {
-  for (var id in _todos) {
+  for (var id in _items) {
     update(id, updates);
   }
 }
@@ -65,29 +65,37 @@ function updateAll(updates) {
  * @param  {string} id
  */
 function destroy(id) {
-  delete _todos[id];
+  delete _items[id];
 }
 
 /**
  * Delete all the completed TODO items.
  */
 function destroyCompleted() {
-  for (var id in _todos) {
-    if (_todos[id].complete) {
+  for (var id in _items) {
+    if (_items[id].complete) {
       destroy(id);
     }
   }
 }
 
 function hideAll() {
-  for (var id in _todos) {
-    _todos[id].visible = false;
+  for (var id in _items) {
+    _items[id].visible = false;
   }
 }
 
 function closeAll() {
-  for (var id in _todos) {
-    _todos[id].open = false;
+  for (var id in _items) {
+    _items[id].open = false;
+  }
+}
+
+function tick() {
+  globalTime += 1;
+  for (var id in _items) {
+    console.log(_items[id].starts);
+    //_items[id].visible = _items[id].starts < globalTime;
   }
 }
 
@@ -99,8 +107,8 @@ var Store = assign({}, EventEmitter.prototype, {
    * @return {boolean}
    */
   areAllComplete: function() {
-    for (var id in _todos) {
-      if (!_todos[id].complete) {
+    for (var id in _items) {
+      if (!_items[id].complete) {
         return false;
       }
     }
@@ -112,13 +120,13 @@ var Store = assign({}, EventEmitter.prototype, {
    * @return {object}
    */
   getAll: function() {
-    return _todos;
+    return _items;
   },
 
   getActive: function() {
-    for (var id in _todos) {
-      if (_todos[id].visible) {
-        return _todos[id];
+    for (var id in _items) {
+      if (_items[id].visible) {
+        return _items[id];
       }
     }
     return true;
@@ -128,9 +136,9 @@ var Store = assign({}, EventEmitter.prototype, {
    * Return the video location that is open, if any
    */
   getOpen: function() {
-    for (var id in _todos) {
-      if (_todos[id].open) {
-        return _todos[id];
+    for (var id in _items) {
+      if (_items[id].open) {
+        return _items[id];
       }
     }
     return true;
@@ -219,6 +227,10 @@ AppDispatcher.register(function(action) {
     case Constants.ITEM_OPEN_VIDEO:
       closeAll();
       update(action.id, {"open": true});
+      Store.emitChange();
+      break;
+    case Constants.TICK:
+      tick();
       Store.emitChange();
       break;
 

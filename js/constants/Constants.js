@@ -20,5 +20,6 @@ module.exports = keyMirror({
   ITEM_UNDO_COMPLETE: null,
   ITEM_UPDATE_TEXT: null,
   ITEM_VIEW_LOCATION: null,
-  ITEM_OPEN_VIDEO: null
+  ITEM_OPEN_VIDEO: null,
+  TICK: null
 });
