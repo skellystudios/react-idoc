@@ -18,7 +18,7 @@ var CHANGE_EVENT = 'change';
 
 // var _todos = {};
 var _todos = require('../stores/InitialData');
-
+var globalTime = 10;
 
 /**
  * Create a TODO item.
@@ -152,7 +152,12 @@ var Store = assign({}, EventEmitter.prototype, {
    */
   removeChangeListener: function(callback) {
     this.removeListener(CHANGE_EVENT, callback);
+  },
+
+  getGlobalTime: function(){
+    return globalTime;
   }
+
 });
 
 // Register callback to handle all updates

@@ -17,8 +17,8 @@ var IDocMap = React.createClass({
 
   getInitialState: function(){
     return {
-      zoom: 4,
-      center: new google.maps.LatLng(-25.363882, 131.044922),
+      zoom: 12,
+      center: new google.maps.LatLng(51.518507, -0.120933),
       timeoutId: null,
     };
   },
@@ -51,7 +51,8 @@ var IDocMap = React.createClass({
         <Map ref="map" style={{height: "99%"}} 
               zoom={this.state.zoom} 
               center={this.state.center} 
-              onCenterChanged={this._handle_map_center_changed}  
+              onCenterChanged={this._handle_map_center_changed} 
+              styles={this.props.mapStyles} 
               />
         {markers}
 
@@ -69,6 +70,10 @@ var IDocMap = React.createClass({
   }
 
 });
+
+IDocMap.defaultProps = {
+  mapStyles: [{"featureType":"administrative","elementType":"all","stylers":[{"visibility":"on"},{"lightness":33}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2e5d4"}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"color":"#c5dac6"}]},{"featureType":"poi.park","elementType":"labels","stylers":[{"visibility":"on"},{"lightness":20}]},{"featureType":"road","elementType":"all","stylers":[{"lightness":20}]},{"featureType":"road.highway","elementType":"geometry","stylers":[{"color":"#c5c6c6"}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#e4d7c6"}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#fbfaf7"}]},{"featureType":"water","elementType":"all","stylers":[{"visibility":"on"},{"color":"#acbcc9"}]}]
+}
 
 module.exports = IDocMap;
 

@@ -20,6 +20,8 @@ var DisplayBox = React.createClass({
   render: function() {
     var item = this.props.item;
     const opts = {
+      width: 500,
+      height: 300,
       playerVars: { // https://developers.google.com/youtube/player_parameters
         autoplay: 1,
         controls:0,
@@ -27,7 +29,6 @@ var DisplayBox = React.createClass({
         rel:0,
         showinfo: 0,
         disablekb: 1,
-
       }
     };
     return (
@@ -35,7 +36,7 @@ var DisplayBox = React.createClass({
         {item.text}
         https://jsfiddle.net/5bwccbe5/
        <YouTube
-            url="https://www.youtube.com/watch?v=cKkYGK4jE7I"           // required
+            url="https://www.youtube.com/watch?v=gjHo5BZM7V0"           // required
             key={item.id}
             // id={string}             // defaults -> 'react-yt-player'
             opts={opts}              // defaults -> {}

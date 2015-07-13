@@ -33,7 +33,7 @@ input[type="checkbox"] {
 
 .display-box {
   float: left;
-  height: 800%;
+  height: 100%;
   left: 0px;
   background-color: #eee;
   z-index: 100000000;
