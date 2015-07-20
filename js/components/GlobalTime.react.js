@@ -18,7 +18,7 @@ var DisplayBox = React.createClass({
     return (
 
       <div className="time-container">
-        <div className="global-time">
+        <div className="global-time range-slider">
           {time}
           <input type="range" min="0" max="100" value={time} id="fader" step="1" />
         </div>  

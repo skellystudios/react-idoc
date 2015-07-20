@@ -61,7 +61,6 @@ var DisplayBox = React.createClass({
     console.log(item)
     return (
       <div className="display-box">
-        {item.url}
        <YouTube
             url={item.url}           // required
             key={item.id}
