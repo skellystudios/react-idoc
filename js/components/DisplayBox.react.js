@@ -14,11 +14,13 @@ var DisplayBox = React.createClass({
     };
   },
 
+
+
   componentDidMount: function(){
         // componentDidMount is called by react when the component 
         // has been rendered on the page. We can set the interval here:
-       this.start();
-       // TODO: remove this
+       //this.start();
+      
     },
 
     componentWillUnmount: function(){
@@ -36,7 +38,7 @@ var DisplayBox = React.createClass({
     },
 
     tick: function(){
-        Actions.tick()
+      Actions.tick()
     },
 
   /**
@@ -58,10 +60,9 @@ var DisplayBox = React.createClass({
     };
     return (
       <div className="display-box">
-        {item.text}
-        https://jsfiddle.net/5bwccbe5/
+        {item.url}
        <YouTube
-            url="https://www.youtube.com/watch?v=gjHo5BZM7V0"           // required
+            url={item.url}           // required
             key={item.id}
             // id={string}             // defaults -> 'react-yt-player'
             opts={opts}              // defaults -> {}
@@ -69,6 +70,7 @@ var DisplayBox = React.createClass({
             onPlay={this.start}           // defaults -> noop
             onPause={this.stop}          // defaults -> noop
             onEnd={this.stop}            // defaults -> noop
+        }
       />
       </div>
     );

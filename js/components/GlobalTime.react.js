@@ -16,10 +16,12 @@ var DisplayBox = React.createClass({
     var time = this.props.time;
     
     return (
-      <div className="global-time">
-        {time}
-        <input type="range" min="0" max="100" value={time} id="fader" step="1" />
-        
+
+      <div className="time-container">
+        <div className="global-time">
+          {time}
+          <input type="range" min="0" max="100" value={time} id="fader" step="1" />
+        </div>  
       </div>
 
     );

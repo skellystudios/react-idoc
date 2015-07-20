@@ -1,4 +1,4 @@
-"use strict";
+  "use strict";
 var React = require('react/addons')
 var GoogleMapsMixin = require("react-google-maps").GoogleMapsMixin;
 var Map = require("react-google-maps").Map
@@ -20,50 +20,48 @@ var IDocMap = React.createClass({
       zoom: 12,
       center: new google.maps.LatLng(51.518507, -0.120933),
       timeoutId: null,
+      //allPoints: this.props.allPoints,
+      mapStyles: this.props.mapStyles,
     };
   },
 
-  componentDidMount: function() {
-    Store.addChangeListener(this._onChange);
-  },
+  // componentDidMount: function() {
+  //       console.log("yes")
+  //    // Store.addChangeListener(this._onChange);
+  // },
 
-  componentWillUnmount: function() {
-    Store.removeChangeListener(this._onChange);
-  },
+  // componentWillUnmount: function() {
+  //   Store.removeChangeListener(this._onChange);
+  // },
 
   // shouldComponentUpdate: function(nextProps, nextState) {
-  //   var oldPoints = this.props.allPoints;
-  //   var newPoints = nextProps.allPoints
-  //   for (var key in oldPoints) {
-  //     if (oldPoints[key].visible !== newPoints[key].visible){
-  //       console.log("true");
-  //       return true;
-  //     }
-  //   }
-  //   return false;
+  //   console.log(this.props.allPoints === nextProps.allPoints)
+  //    return true;
   // },
 
   render: function() {
 
+
     var markers = [];
-    var allPoints = this.props.allPoints;
+    var allPoints = this.props.allPoints
     for (var key in allPoints) {
       if (allPoints[key].visible) {
         var position = new google.maps.LatLng(allPoints[key].lat, allPoints[key].long);
         var visible = allPoints[key].visible; 
+        //var visible = true;
         markers.push(
           <Marker key={key} ref={key} position={position} 
                 visible={visible} onClick={this._handle_marker_click.bind(this, key)} />
           );
       }
     }
-
-    return <div  className="map" style={{height: "100%"}} {...this.props}>
+    // {...this.props}
+    return <div  className="map" style={{height: "100%"}} >
         <Map ref="map" style={{height: "99%"}} 
               zoom={this.state.zoom} 
               center={this.state.center} 
               onCenterChanged={this._handle_map_center_changed} 
-              styles={this.props.mapStyles} 
+              styles={this.state.mapStyles}
               />
         {markers}
 
@@ -72,7 +70,6 @@ var IDocMap = React.createClass({
 
 
   _handle_marker_click: function(key) {
-    console.log(key);
     Actions.openVideo(key);
   },
 
@@ -88,7 +85,3 @@ IDocMap.defaultProps = {
 
 module.exports = IDocMap;
 
-
-
-//         <Marker ref="marker" position={this.state.center} title="Click to zoom" onClick={this._handle_marker_click} /> 
-//      

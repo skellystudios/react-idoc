@@ -1,9 +1,9 @@
 var InitialData = {
 	"1" : {
 		"id": "1",
-		"text": "First Marker",
+		"url": "https://www.youtube.com/watch?v=e_gMGnAR9Ng",
 		"complete": false,
-		"visible": true,	
+		"visible": false,	
 		"lat": 51.518507,
 		"long": -0.120933,
 		"open": true,
@@ -11,9 +11,9 @@ var InitialData = {
 	},
 	"2" : {
 		"id": "2",
-		"text": "Second Marker",
+		"url": "https://www.youtube.com/watch?v=gjHo5BZM7V0",
 		"complete": false,
-		"visible": true,	
+		"visible": false,	
 		"lat": 51.551507,
 		"long": -0.120933,
 		"open": false,
@@ -21,9 +21,9 @@ var InitialData = {
 	},
 	"3" : {
 		"id": "3",
-		"text": "Second Marker",
+		"url": "https://www.youtube.com/watch?v=_8Vdc8sqmek",
 		"complete": false,
-		"visible": true,	
+		"visible": false,	
 		"lat": 51.531707,
 		"long": -0.121133,
 		"open": false,
@@ -31,4 +31,3 @@ var InitialData = {
 	},
 };
 
-module.exports = InitialData;

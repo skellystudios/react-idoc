@@ -33,3 +33,18 @@
 	margin-right: 20px;
 	margin-top: 20px;
 }
+
+.global-time {
+	text-align: center;
+    position: relative;
+    margin: auto auto auto auto;
+    width: 400px;
+    z-index: 1;
+    background-color: #eee
+}
+
+
+.time-container {
+	position: absolute;
+	width: 100%;
+}

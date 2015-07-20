@@ -15,7 +15,7 @@ var Timer = require('./Timer.react')
  */
 function getStoreState() {
   return {
-    allItems: Store.getAll(),
+    allItems: JSON.parse(JSON.stringify(Store.getAll())),
     areAllComplete: Store.areAllComplete(),
     activeLocation: Store.getActive(),
     openVideos: Store.getOpen(),
@@ -37,17 +37,27 @@ var IDocApp = React.createClass({
     Store.removeChangeListener(this._onChange);
   },
 
+  shouldComponentUpdate: function(nextProps, nextState) {
+    console.log("State 2 vis " + this.state.allItems[2].visible + " Next 2 vis " + nextState.allItems[2].visible);
+    if (this.state.allItems === nextState.allItems){
+      return true
+    }
+    return true
+  },
+
   /**
    * @return {object}
    */
   render: function() {
     return (
-      <div> 
+      <div 
+          className="idoc-app"> 
       <GlobalTime
           time={this.state.globalTime}
         />
       <DisplayBox
           item={this.state.openVideos}
+          key={this.state.openVideos.id}
         />
       <IDocMap
           allPoints={this.state.allItems}

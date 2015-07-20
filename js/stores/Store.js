@@ -15,6 +15,7 @@ var Constants = require('../constants/Constants');
 var assign = require('object-assign');
 
 var CHANGE_EVENT = 'change';
+var TICK_EVENT = 'tick';
 
 // var _items = {};
 var _items = require('../stores/InitialData');
@@ -93,9 +94,13 @@ function closeAll() {
 
 function tick() {
   globalTime += 1;
+  console.log("tick");
+  console.log(_items);
   for (var id in _items) {
-    console.log(_items[id].starts);
-    //_items[id].visible = _items[id].starts < globalTime;
+    console.log("visible_check");
+    _items[id].visible = _items[id].starts < globalTime;
+    console.log(_items[id].visible);
+
   }
 }
 
@@ -146,6 +151,10 @@ var Store = assign({}, EventEmitter.prototype, {
 
   emitChange: function() {
     this.emit(CHANGE_EVENT);
+  },
+
+  emitTick: function() {
+    this.emit(TICK_EVENT);
   },
 
   /**
