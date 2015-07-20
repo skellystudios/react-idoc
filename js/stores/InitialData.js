@@ -30,3 +30,6 @@ var InitialData = {
 		"starts": 20
 	}
 };
+
+
+module.exports = InitialData;

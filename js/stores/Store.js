@@ -20,9 +20,6 @@ var TICK_EVENT = 'tick';
 // var _items = {};
 var _items = require('../stores/InitialData');
 
-console.log("_items")
-console.log(_items)
-
 var globalTime = 10;
 
 /**
@@ -98,13 +95,8 @@ function closeAll() {
 
 function tick() {
   globalTime += 1;
-  console.log("tick");
-  console.log(_items);
   for (var id in _items) {
-    console.log("visible_check");
     _items[id].visible = _items[id].starts < globalTime;
-    console.log(_items[id].visible);
-
   }
 }
 
@@ -146,7 +138,6 @@ var Store = assign({}, EventEmitter.prototype, {
    */
   getOpen: function() {
     for (var id in _items) {
-      console.log(_items[id])
       if (_items[id].open) {
         return _items[id];
       }
