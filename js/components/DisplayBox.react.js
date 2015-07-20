@@ -58,6 +58,7 @@ var DisplayBox = React.createClass({
         disablekb: 1,
       }
     };
+    console.log(item)
     return (
       <div className="display-box">
         {item.url}
@@ -70,7 +71,6 @@ var DisplayBox = React.createClass({
             onPlay={this.start}           // defaults -> noop
             onPause={this.stop}          // defaults -> noop
             onEnd={this.stop}            // defaults -> noop
-        }
       />
       </div>
     );

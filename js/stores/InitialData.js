@@ -3,11 +3,11 @@ var InitialData = {
 		"id": "1",
 		"url": "https://www.youtube.com/watch?v=e_gMGnAR9Ng",
 		"complete": false,
-		"visible": false,	
+		"visible": true,	
 		"lat": 51.518507,
 		"long": -0.120933,
 		"open": true,
-		"starts": 10,
+		"starts": 9
 	},
 	"2" : {
 		"id": "2",
@@ -17,7 +17,7 @@ var InitialData = {
 		"lat": 51.551507,
 		"long": -0.120933,
 		"open": false,
-		"starts": 15,
+		"starts": 15
 	},
 	"3" : {
 		"id": "3",
@@ -28,6 +28,5 @@ var InitialData = {
 		"long": -0.121133,
 		"open": false,
 		"starts": 20
-	},
+	}
 };
-
