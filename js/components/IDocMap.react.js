@@ -5,7 +5,7 @@ var Map = require("react-google-maps").Map
 var Marker = require("react-google-maps").Marker
 var ReactPropTypes = React.PropTypes;
 var Actions = require('../actions/Actions');
-var Store = require('../stores/Store');
+var LocationStore = require('../stores/LocationStore');
 
 var cx = require('react/lib/cx');
 
@@ -27,11 +27,11 @@ var IDocMap = React.createClass({
 
   // componentDidMount: function() {
   //       console.log("yes")
-  //    // Store.addChangeListener(this._onChange);
+  //    // LocationStore.addChangeListener(this._onChange);
   // },
 
   // componentWillUnmount: function() {
-  //   Store.removeChangeListener(this._onChange);
+  //   LocationStore.removeChangeListener(this._onChange);
   // },
 
   // shouldComponentUpdate: function(nextProps, nextState) {

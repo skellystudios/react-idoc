@@ -5,21 +5,18 @@
 
 var Buttons = require('./Buttons.react');
 var React = require('react');
-var Store = require('../stores/Store');
+var Store = require('../stores/LocationStore');
 var DisplayBox = require('./DisplayBox.react');
 var GlobalTime = require('./GlobalTime.react');
 var IDocMap = require('./IDocMap.react')
-var Timer = require('./Timer.react')
 /**
  * Retrieve the current data from the Store
  */
 function getStoreState() {
   return {
     allItems: JSON.parse(JSON.stringify(Store.getAll())),
-    areAllComplete: Store.areAllComplete(),
     activeLocation: Store.getActive(),
     openVideos: Store.getOpen(),
-    globalTime: Store.getGlobalTime(),
   };
 }
 
@@ -53,7 +50,7 @@ var IDocApp = React.createClass({
       <div 
           className="idoc-app"> 
       <GlobalTime
-          time={this.state.globalTime}
+          time="0"
         />
       <DisplayBox
           item={this.state.openVideos}
