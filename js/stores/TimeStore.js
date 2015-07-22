@@ -17,16 +17,16 @@ function tick() {
 
 var TimeStore = assign({}, EventEmitter.prototype, {
 
-  emitChange: function() {
+  emitTick: function() {
     this.emit(TICK_EVENT);
   },
 
   addChangeListener: function(callback) {
-    this.on(CHANGE_EVENT, callback);
+    this.on(TICK_EVENT, callback);
   },
 
   removeChangeListener: function(callback) {
-    this.removeListener(CHANGE_EVENT, callback);
+    this.removeListener(TICK_EVENT, callback);
   },
 
   getGlobalTime: function(){
