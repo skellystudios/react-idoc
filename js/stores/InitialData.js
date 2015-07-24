@@ -18,7 +18,7 @@ var InitialData = {
 		"lat": 51.551507,
 		"long": -0.120933,
 		"open": false,
-		"starts": 6,
+		"starts": 2,
 		"ends": 23
 	},
 	"3" : {
@@ -29,7 +29,7 @@ var InitialData = {
 		"lat": 51.531707,
 		"long": -0.121133,
 		"open": false,
-		"starts": 12,
+		"starts": 6,
 		"ends": 33
 	},
 	"4" : {

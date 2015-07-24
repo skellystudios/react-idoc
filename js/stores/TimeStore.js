@@ -41,7 +41,6 @@ AppDispatcher.register(function(action) {
 
   switch(action.actionType) {
     case Constants.TICK:
-      // console.log("got a tick");
       tick();
       TimeStore.emitTick();
       break;

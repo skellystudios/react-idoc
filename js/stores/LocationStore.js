@@ -29,7 +29,6 @@ function update(id, updates) {
 function updateVisiblePoints() {
   globalTime = TimeStore.getGlobalTime();
   for (var id in _items) {
-    
     if ((_items[id].starts < globalTime) && !_items[id].visible){
       _items[id].visible = true;
       Store.emitChange();
@@ -89,9 +88,11 @@ var Store = assign({}, EventEmitter.prototype, {
 
 // Register callback to handle all updates
 AppDispatcher.register(function(action) {
-  var text;
-
   switch(action.actionType) {
+
+    case Constants.TICK:
+      updateVisiblePoints();
+      break;
     
     case Constants.VIEW_LOCATION:
       hideAll();
@@ -103,9 +104,6 @@ AppDispatcher.register(function(action) {
       closeAll();
       update(action.id, {"open": true});
       Store.emitChange();
-      break;
-    case Constants.TICK:
-      updateVisiblePoints();
       break;
 
     default:
