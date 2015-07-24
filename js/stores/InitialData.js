@@ -7,7 +7,8 @@ var InitialData = {
 		"lat": 51.518507,
 		"long": -0.120933,
 		"open": true,
-		"starts": 0
+		"starts": 0,
+		"ends": 23
 	},
 	"2" : {
 		"id": "2",

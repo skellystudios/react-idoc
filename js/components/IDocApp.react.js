@@ -34,7 +34,7 @@ var IDocApp = React.createClass({
   },
 
   shouldComponentUpdate: function(nextProps, nextState) {
-    console.log("State 2 vis " + this.state.allItems[2].visible + " Next 2 vis " + nextState.allItems[2].visible);
+    //console.log("State 2 vis " + this.state.allItems[2].visible + " Next 2 vis " + nextState.allItems[2].visible);
     if (this.state.allItems === nextState.allItems){
       return true
     }

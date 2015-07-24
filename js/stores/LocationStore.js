@@ -22,6 +22,10 @@ function closeAll() {
   }
 }
 
+function update(id, updates) {
+  _items[id] = assign({}, _items[id], updates);
+}
+
 function updateVisiblePoints() {
   globalTime = TimeStore.getGlobalTime();
   for (var id in _items) {
