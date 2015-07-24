@@ -51,12 +51,12 @@ var DisplayBox = React.createClass({
       height: 300,
       playerVars: { // https://developers.google.com/youtube/player_parameters
         autoplay: 1,
-        controls:0,
+        //controls:0,
         modestbranding: 1,
         rel:0,
         showinfo: 0,
         disablekb: 1,
-      }
+      },
     };
     console.log(item)
     return (

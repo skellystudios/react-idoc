@@ -18,7 +18,7 @@ var IDocMap = React.createClass({
   getInitialState: function(){
     return {
       zoom: 12,
-      center: new google.maps.LatLng(51.518507, -0.120933),
+      center: new google.maps.LatLng(51.511523, -0.156728),
       timeoutId: null,
       //allPoints: this.props.allPoints,
       mapStyles: this.props.mapStyles,
@@ -70,6 +70,7 @@ var IDocMap = React.createClass({
 
 
   _handle_marker_click: function(key) {
+    console.log(key);
     Actions.openVideo(key);
   },
 

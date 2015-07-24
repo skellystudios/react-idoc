@@ -7,7 +7,7 @@ var Buttons = require('./Buttons.react');
 var React = require('react');
 var Store = require('../stores/LocationStore');
 var DisplayBox = require('./DisplayBox.react');
-var GlobalTime = require('./GlobalTime.react');
+var FlipClock = require('./FlipClock.react');
 var IDocMap = require('./IDocMap.react')
 /**
  * Retrieve the current data from the Store
@@ -49,7 +49,7 @@ var IDocApp = React.createClass({
     return (
       <div 
           className="idoc-app"> 
-      <GlobalTime
+      <FlipClock
           time="0"
         />
       <DisplayBox

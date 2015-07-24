@@ -7,7 +7,7 @@ var assign = require('object-assign');
 var CHANGE_EVENT = 'change';
 var TICK_EVENT = 'tick';
 
-var globalTime = 10;
+var globalTime = 1;
 
 
 function tick() {

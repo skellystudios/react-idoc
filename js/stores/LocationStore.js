@@ -25,10 +25,17 @@ function closeAll() {
 function updateVisiblePoints() {
   globalTime = TimeStore.getGlobalTime();
   for (var id in _items) {
+    
     if ((_items[id].starts < globalTime) && !_items[id].visible){
       _items[id].visible = true;
       Store.emitChange();
     }
+
+    if ((_items[id].ends < globalTime) && _items[id].visible){
+      _items[id].visible = false;
+      Store.emitChange();
+    }
+
   }
 }
 

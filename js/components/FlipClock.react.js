@@ -3,7 +3,7 @@ var ReactPropTypes = React.PropTypes;
 var Actions = require('../actions/Actions');
 var TimeStore = require('../stores/TimeStore');
 
-var GlobalTime = React.createClass({
+var FlipClock = React.createClass({
 
   componentDidMount: function() {
     TimeStore.addChangeListener(this._onChange);
@@ -14,14 +14,24 @@ var GlobalTime = React.createClass({
   },
 
   _onChange: function() {
-    this.state.time = TimeStore.getGlobalTime();
+    this.state.time.add(1, "days");
     secondPlay();
+    if ((this.state.time.date() == 01) 
+        | (this.state.time.date() == 10)
+        | (this.state.time.date() == 20) 
+        | (this.state.time.date() == 30)){
+      second2Play(); 
+    }
+    if (this.state.time.date() == 01){
+      minutePlay(); 
+    }
     this.forceUpdate();
   },
 
   getInitialState: function() {
+    var moment_date = moment("2015-01-01").add(this.props.time, "days")
     return {
-      time: this.props.time
+      time: moment_date,
     };
   },
 
@@ -191,18 +201,6 @@ var GlobalTime = React.createClass({
                     <a href="#">
                         <div className="up">
                             <div className="shadow"></div>
-                            <div className="inn">0</div>
-                        </div>
-                        <div className="down">
-                            <div className="shadow"></div>
-                            <div className="inn">0</div>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <div className="up">
-                            <div className="shadow"></div>
                             <div className="inn">1</div>
                         </div>
                         <div className="down">
@@ -304,6 +302,18 @@ var GlobalTime = React.createClass({
                         <div className="down">
                             <div className="shadow"></div>
                             <div className="inn">9</div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div className="up">
+                            <div className="shadow"></div>
+                            <div className="inn">0</div>
+                        </div>
+                        <div className="down">
+                            <div className="shadow"></div>
+                            <div className="inn">0</div>
                         </div>
                     </a>
                 </li>
@@ -362,10 +372,11 @@ var GlobalTime = React.createClass({
             </ul>
           </div>
         </div>
-       // <div className="global-time range-slider">
-        //  Time: {time}
-        //  <input type="range" min="0" max="100" value={time} id="fader" step="1" />
-        //</div>  
+       {/* <div className="global-time range-slider">
+          Time: {time}
+          <input type="range" min="0" max="100" value={time} id="fader" step="1" />
+        </div>  
+      */}
       </div>
 
     );
@@ -373,4 +384,4 @@ var GlobalTime = React.createClass({
 
 });
 
-module.exports = GlobalTime;
+module.exports = FlipClock;
