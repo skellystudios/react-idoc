@@ -3,7 +3,6 @@
  * the Store and passes the new data to its children.
  */
 
-var Buttons = require('./Buttons.react');
 var React = require('react');
 var Store = require('../stores/LocationStore');
 var DisplayBox = require('./DisplayBox.react');
@@ -60,10 +59,6 @@ var IDocApp = React.createClass({
           allPoints={this.state.allItems}
           googleMapsApi={google.maps}
         />
-        <Buttons
-          allItems={this.state.allItems}
-          areAllComplete={this.state.areAllComplete}
-        />  
        </div>
   	);
   },
