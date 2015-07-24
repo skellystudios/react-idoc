@@ -68,6 +68,7 @@ var IDocApp = React.createClass({
    */
   _onChange: function() {
     this.setState(getStoreState());
+    this.forceUpdate();
   }
 
 });

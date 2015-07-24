@@ -60,13 +60,12 @@ var DisplayBox = React.createClass({
     };
     return (
       <div className="display-box">
-       {item.id}
        <YouTube
             url={item.url}           // required
             key={item.id}
             // id={string}             // defaults -> 'react-yt-player'
             opts={opts}              // defaults -> {}
-            // onReady={func}          // defaults -> noop
+            onReady={func}          // defaults -> noop
             onPlay={this.start}           // defaults -> noop
             onPause={this.stop}          // defaults -> noop
             onEnd={this.stop}            // defaults -> noop

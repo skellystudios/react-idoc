@@ -12,14 +12,14 @@
 var keyMirror = require('keymirror');
 
 module.exports = keyMirror({
-  ITEM_CREATE: null,
-  ITEM_COMPLETE: null,
-  ITEM_DESTROY: null,
-  ITEM_DESTROY_COMPLETED: null,
-  ITEM_TOGGLE_COMPLETE_ALL: null,
-  ITEM_UNDO_COMPLETE: null,
-  ITEM_UPDATE_TEXT: null,
-  ITEM_VIEW_LOCATION: null,
-  ITEM_OPEN_VIDEO: null,
-  TICK: null
+  ITEM_CREATE: 1,
+  ITEM_COMPLETE: 2,
+  ITEM_DESTROY: 3,
+  ITEM_DESTROY_COMPLETED: 4,
+  ITEM_TOGGLE_COMPLETE_ALL: 5,
+  ITEM_UNDO_COMPLETE: 6,
+  ITEM_UPDATE_TEXT: 7,
+  ITEM_VIEW_LOCATION: 8,
+  ITEM_OPEN_VIDEO: 9,
+  TICK: 10
 });

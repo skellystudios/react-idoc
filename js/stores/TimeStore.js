@@ -46,7 +46,6 @@ AppDispatcher.register(function(action) {
       break;
 
     default:
-      closeAll();
       // no op
   }
 });

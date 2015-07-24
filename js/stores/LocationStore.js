@@ -88,17 +88,7 @@ var Store = assign({}, EventEmitter.prototype, {
 
 // Register callback to handle all updates
 AppDispatcher.register(function(action) {
-  switch(action.actionType) {
-
-    case Constants.TICK:
-      updateVisiblePoints();
-      break;
-    
-    case Constants.VIEW_LOCATION:
-      hideAll();
-      update(action.id, {"visible": true});
-      Store.emitChange();
-      break;
+   switch(action.actionType) {
 
     case Constants.ITEM_OPEN_VIDEO:
       closeAll();
@@ -106,10 +96,20 @@ AppDispatcher.register(function(action) {
       Store.emitChange();
       break;
 
+    case Constants.TICK:
+      updateVisiblePoints();
+      break;
+
+    case Constants.VIEW_LOCATION:
+      hideAll();
+      update(action.id, {"visible": true});
+      Store.emitChange();
+      break;
+  
     default:
-      closeAll();
-      // no op
-  }
+        // no op
+    }   
+
 });
 
 module.exports = Store;

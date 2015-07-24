@@ -26,7 +26,6 @@ var IDocMap = React.createClass({
   },
 
   // componentDidMount: function() {
-  //       console.log("yes")
   //    // LocationStore.addChangeListener(this._onChange);
   // },
 
@@ -35,7 +34,6 @@ var IDocMap = React.createClass({
   // },
 
   // shouldComponentUpdate: function(nextProps, nextState) {
-  //   console.log(this.props.allPoints === nextProps.allPoints)
   //    return true;
   // },
 
@@ -70,7 +68,6 @@ var IDocMap = React.createClass({
 
 
   _handle_marker_click: function(key) {
-    console.log(key);
     Actions.openVideo(key);
   },
 
