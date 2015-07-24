@@ -58,7 +58,6 @@ var DisplayBox = React.createClass({
         disablekb: 1,
       },
     };
-    console.log(item)
     return (
       <div className="display-box">
        <YouTube
