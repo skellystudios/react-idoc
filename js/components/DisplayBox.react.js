@@ -51,7 +51,7 @@ var DisplayBox = React.createClass({
       height: 300,
       playerVars: { // https://developers.google.com/youtube/player_parameters
         autoplay: 1,
-        //controls:0,
+        controls:0,
         modestbranding: 1,
         rel:0,
         showinfo: 0,
@@ -65,7 +65,7 @@ var DisplayBox = React.createClass({
             key={item.id}
             // id={string}             // defaults -> 'react-yt-player'
             opts={opts}              // defaults -> {}
-            onReady={func}          // defaults -> noop
+            // onReady={func}          // defaults -> noop
             onPlay={this.start}           // defaults -> noop
             onPause={this.stop}          // defaults -> noop
             onEnd={this.stop}            // defaults -> noop
