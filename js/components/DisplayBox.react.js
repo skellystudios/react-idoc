@@ -56,7 +56,7 @@ var DisplayBox = React.createClass({
     var item = this.props.item;
     const opts = {
       width: 500,
-      height: 300,
+      height: 280,
       playerVars: { // https://developers.google.com/youtube/player_parameters
         autoplay: 1,
         controls:0,
@@ -84,8 +84,6 @@ var DisplayBox = React.createClass({
               onEnd={this.end}            // defaults -> noop
           ></YouTube>
       }
-
-      />
       </div>
     );
   }

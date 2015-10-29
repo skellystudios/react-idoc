@@ -18,8 +18,8 @@ body {
   z-index: 100000000;
   position: absolute;
   margin: 10px;
-  border: solid 5px #ddd;
-  width: 500px;
+  border: solid 5px #999;
+  width: 510px;
 }
 
 
