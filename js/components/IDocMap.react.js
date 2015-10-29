@@ -19,8 +19,6 @@ var IDocMap = React.createClass({
     return {
       zoom: 12,
       center: new google.maps.LatLng(51.511523, -0.156728),
-      timeoutId: null,
-      //allPoints: this.props.allPoints,
       mapStyles: this.props.mapStyles,
     };
   },

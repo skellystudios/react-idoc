@@ -202,7 +202,7 @@ body.play ul li.before  {
 }
 
 body.play ul li.active  {
-    animation: asd .5s .5s linear both;
+    animation: asd .3s .3s linear both;
     z-index: 2;
 }
 
@@ -220,7 +220,7 @@ body.play ul li.active  {
 
 body.play ul li.active .down  {
     z-index: 2;
-    animation: turn .5s .5s linear both;
+    animation: turn .3s .3s linear both;
 }
 
 @keyframes turn  {
@@ -234,7 +234,7 @@ body.play ul li.active .down  {
 
 body.play ul li.before .up  {
     z-index: 2;
-    animation: turn2 .5s linear both;
+    animation: turn2 .3s linear both;
 }
 
 @keyframes turn2  {
