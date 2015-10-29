@@ -2,6 +2,7 @@ var React = require('react');
 var ReactPropTypes = React.PropTypes;
 var Actions = require('../actions/Actions');
 var YouTube = require('react-youtube');
+var Store = require('../stores/LocationStore');
 
 var DisplayBox = React.createClass({
 
@@ -14,19 +15,21 @@ var DisplayBox = React.createClass({
     };
   },
 
+  componentDidMount: function() {
+    Store.addChangeListener(this._onChange);
+  },
 
-
-  componentDidMount: function(){
-        // componentDidMount is called by react when the component 
-        // has been rendered on the page. We can set the interval here:
-       //this.start();
-      
+  componentWillUnmount: function() {
+    Store.removeChangeListener(this._onChange);
+    this.stop();
     },
 
-    componentWillUnmount: function(){
-        // This method is called immediately before the component is removed
-        // from the page and destroyed. We can clear the interval here:
-        this.stop();
+    _onChange: function() {
+      this.state.hasEnded = Store.hasEnded();
+      if (this.state.hasEnded) {
+        // Surely not the best way of doing this
+        this.forceUpdate();
+      }
     },
 
     start: function(){
@@ -35,6 +38,11 @@ var DisplayBox = React.createClass({
 
     stop: function(){
         clearInterval(this.timer);
+    },
+
+    end: function(){
+        clearInterval(this.timer);
+        Actions.videoEnded();
     },
 
     tick: function(){
@@ -60,15 +68,23 @@ var DisplayBox = React.createClass({
     };
     return (
       <div className="display-box">
-       <YouTube
-            url={item.url}           // required
-            key={item.id}
-            // id={string}             // defaults -> 'react-yt-player'
-            opts={opts}              // defaults -> {}
-            // onReady={func}          // defaults -> noop
-            onPlay={this.start}           // defaults -> noop
-            onPause={this.stop}          // defaults -> noop
-            onEnd={this.stop}            // defaults -> noop
+      {this.state.hasEnded ?
+         <div className="test">
+          Test
+        </div>
+      :
+        <YouTube
+              url={item.url}           // required
+              key={item.id}
+              // id={string}             // defaults -> 'react-yt-player'
+              opts={opts}              // defaults -> {}
+              // onReady={func}          // defaults -> noop
+              onPlay={this.start}           // defaults -> noop
+              onPause={this.stop}          // defaults -> noop
+              onEnd={this.end}            // defaults -> noop
+          ></YouTube>
+      }
+
       />
       </div>
     );

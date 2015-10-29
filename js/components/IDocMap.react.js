@@ -49,7 +49,8 @@ var IDocMap = React.createClass({
         //var visible = true;
         markers.push(
           <Marker key={key} ref={key} position={position} 
-                visible={visible} onClick={this._handle_marker_click.bind(this, key)} />
+                visible={visible} onClick={this._handle_marker_click.bind(this, key)}
+                icon="https://maps.google.com/mapfiles/kml/shapes/parking_lot_maps.png" />
           );
       }
     }

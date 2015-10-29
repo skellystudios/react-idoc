@@ -9,6 +9,7 @@ var _items = require('../stores/InitialData');
 
 var TimeStore = require('../stores/TimeStore');
 
+var hasEnded = false;
 
 function hideAll() {
   for (var id in _items) {
@@ -42,7 +43,17 @@ function updateVisiblePoints() {
   }
 }
 
+function setEnded(x) {
+  hasEnded = x;
+}
+
+
+
 var Store = assign({}, EventEmitter.prototype, {
+
+  hasEnded: function() {
+    return hasEnded;
+  },
 
   getAll: function() {
     return _items;
@@ -93,6 +104,7 @@ AppDispatcher.register(function(action) {
     case Constants.ITEM_OPEN_VIDEO:
       closeAll();
       update(action.id, {"open": true});
+      setEnded(false);
       Store.emitChange();
       break;
 
@@ -103,6 +115,12 @@ AppDispatcher.register(function(action) {
     case Constants.VIEW_LOCATION:
       hideAll();
       update(action.id, {"visible": true});
+      setEnded(false);
+      Store.emitChange();
+      break;
+
+    case Constants.ITEM_VIDEO_ENDED:
+      setEnded(true);
       Store.emitChange();
       break;
   

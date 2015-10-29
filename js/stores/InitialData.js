@@ -12,7 +12,7 @@ var InitialData = {
 	},
 	"2" : {
 		"id": "2",
-		"url": "https://www.youtube.com/watch?v=gjHo5BZM7V0",
+		"url": "https://www.youtube.com/watch?v=tPEE9ZwTmy0",
 		"complete": false,
 		"visible": false,	
 		"lat": 51.551507,

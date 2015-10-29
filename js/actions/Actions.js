@@ -17,6 +17,7 @@ var Actions = {
    * Makes the marker visible
    */
   view: function(id) {
+    console.log("VIEW");
     AppDispatcher.dispatch({
       actionType: Constants.VIEW_LOCATION,
       id: id
@@ -27,6 +28,7 @@ var Actions = {
    * Opens the video associated with a particular marker
    */
   openVideo: function(id) {
+    console.log("OPEN VIDEO");
     AppDispatcher.dispatch({
       actionType: Constants.ITEM_OPEN_VIDEO,
       id: id
@@ -37,8 +39,16 @@ var Actions = {
    * Moved the global timer on by one tick
    */
   tick: function() {
+    console.log("TICK");
     AppDispatcher.dispatch({
       actionType: Constants.TICK,
+    });
+  },
+
+  videoEnded: function() {
+    console.log("ITEM_VIDEO_ENDED");
+    AppDispatcher.dispatch({
+      actionType: Constants.ITEM_VIDEO_ENDED,
     });
   },
 

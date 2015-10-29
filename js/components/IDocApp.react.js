@@ -16,8 +16,26 @@ function getStoreState() {
     allItems: JSON.parse(JSON.stringify(Store.getAll())),
     activeLocation: Store.getActive(),
     openVideos: Store.getOpen(),
+    hasEnded: Store.hasEnded(),
   };
 }
+
+/*
+
+  V1 things to do –
+  
+  > Blurb boxes
+  > "Jump to" box
+  > Reveal all videos
+  > Return to start
+  > Key
+  > Different colours
+  > Next on the track
+
+  Add to calendar - 2nd tuesday in Dec
+
+*/
+
 
 var IDocApp = React.createClass({
 
@@ -54,6 +72,7 @@ var IDocApp = React.createClass({
       <DisplayBox
           item={this.state.openVideos}
           key={this.state.openVideos.id}
+          hasEnded={this.state.hasEnded}
         />
       <IDocMap
           allPoints={this.state.allItems}
