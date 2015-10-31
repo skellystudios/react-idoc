@@ -51,12 +51,15 @@ var IDocApp = React.createClass({
     Store.removeChangeListener(this._onChange);
   },
 
+
+// TODO: hey Michael, you need to move the state down to the iDocMap level
+
   shouldComponentUpdate: function(nextProps, nextState) {
     //console.log("State 2 vis " + this.state.allItems[2].visible + " Next 2 vis " + nextState.allItems[2].visible);
     if (this.state.allItems === nextState.allItems){
-      return true
+      return false
     }
-    return true
+    return false
   },
 
   /**
@@ -87,7 +90,7 @@ var IDocApp = React.createClass({
    */
   _onChange: function() {
     this.setState(getStoreState());
-    this.forceUpdate();
+    //this.forceUpdate();
   }
 
 });

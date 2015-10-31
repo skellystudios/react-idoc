@@ -17,12 +17,12 @@ var FlipClock = React.createClass({
 
 
     
+
     // Add an extra day
     this.state.time.add(1, "months");
     console.log(this.state.time._d);
-    
-    this.forceUpdate();   
 
+    this.forceUpdate();   
 
     // secondPlay();
     // if ((this.state.time.date() == 01) 
@@ -44,7 +44,7 @@ var FlipClock = React.createClass({
     var moment_date = moment("2015-01-01").add(this.props.time, "days")
     return {
       time: moment_date,
-      monthBit: 1,
+      monthBit: 0,
 
     };
   },
@@ -55,13 +55,15 @@ var FlipClock = React.createClass({
   render: function() {
     var time = this.state.time;
 
-    if (this.state.monthBit == 1) {
-        month1 = this.state.time.format("MMM");
-        month2 = this.state.time.clone().add(1, "months").format("MMM");
-    } else {
-        month1 = this.state.time.clone().add(1, "months").format("MMM");
-        month2 = this.state.time.format("MMM");
-    }
+    // if (this.state.monthBit == 1) {
+    //     month1 = this.state.time.format("MMM");
+    //     month2 = this.state.time.clone().add(0, "months").format("MMM");
+    // } else {
+    //     month1 = this.state.time.clone().add(0, "months").format("MMM");
+    //     month2 = this.state.time.format("MMM");
+    // }
+    month1 = this.state.time.clone().add(0, "months").format("MMM");
+    month2 = this.state.time.clone().add(1, "months").format("MMM");
     // http://codepen.io/skellystudios/pen/QbVqjg?editors=100
     return (
 
@@ -74,11 +76,11 @@ var FlipClock = React.createClass({
                     <a href="#">
                         <div className="up">
                             <div className="shadow"></div>
-                            <div className="inn">{month1}*</div>
+                            <div className="inn">{month1}</div>
                         </div>
                         <div className="down">
                             <div className="shadow"></div>
-                            <div className="inn">{month1}*</div>
+                            <div className="inn">{month1}</div>
                         </div>
                     </a>
                 </li>
