@@ -16,7 +16,7 @@ var FlipClock = React.createClass({
   _onChange: function() {
 
     // Add an extra day
-    this.state.time.add(1, "months");
+    this.state.time.add(1, "days");
     this.forceUpdate();   
 
     // secondPlay();
@@ -27,10 +27,22 @@ var FlipClock = React.createClass({
     //   second2Play(); 
     // }
 
-    if (this.state.time.date() == 01) {
+    if (this.state.time.date() == 1) {
         this.state.monthBit = 1 ^ this.state.monthBit ;
         minutePlay(); 
     }
+
+    if ((this.state.time.date() == 0) ||
+        (this.state.time.date() == 9) ||
+        (this.state.time.date() == 19) ||
+        (this.state.time.date() == 30)
+       ) {
+        this.state.tenDayBit = 1 ^ this.state.tenDayBit ;
+        second2Play(); 
+    }
+    
+    this.state.dayBit = 1 ^ this.state.dayBit ;
+    secondPlay();
 
     
   },
@@ -40,6 +52,8 @@ var FlipClock = React.createClass({
     return {
       time: moment_date,
       monthBit: 0,
+      dayBit: 0,
+      tenDayBit: 0,
 
     };
   },
@@ -49,16 +63,17 @@ var FlipClock = React.createClass({
    */
   render: function() {
     var time = this.state.time;
+    timePlusOne = time.clone().add(1, "days")
 
-    // if (this.state.monthBit == 1) {
-    //     month1 = this.state.time.format("MMM");
-    //     month2 = this.state.time.clone().add(0, "months").format("MMM");
-    // } else {
-    //     month1 = this.state.time.clone().add(0, "months").format("MMM");
-    //     month2 = this.state.time.format("MMM");
-    // }
-    month1 = this.state.time.clone().add(0, "months").format("MMM");
-    month2 = this.state.time.clone().add(1, "months").format("MMM");
+    month1 = time.format("MMM");
+    month2 = timePlusOne.format("MMM");
+
+    day1 = time.format("DD")[1];
+    day2 = timePlusOne.format("DD")[1];
+
+
+    tenDay1 = time.format("DD")[0];
+    tenDay2 = timePlusOne.format("DD")[0];
     // http://codepen.io/skellystudios/pen/QbVqjg?editors=100
     return (
 
@@ -94,16 +109,16 @@ var FlipClock = React.createClass({
             </ul>
           </div>
           <div className="seconds">
-            <ul className="flip secondPlay">
+            <ul className="flip secondPlay" key={this.state.dayBit}>
                 <li>
                     <a href="#">
                         <div className="up">
                             <div className="shadow"></div>
-                            <div className="inn">1</div>
+                            <div className="inn">{day1}</div>
                         </div>
                         <div className="down">
                             <div className="shadow"></div>
-                            <div className="inn">1</div>
+                            <div className="inn">{day1}</div>
                         </div>
                     </a>
                 </li>
@@ -111,123 +126,28 @@ var FlipClock = React.createClass({
                     <a href="#">
                         <div className="up">
                             <div className="shadow"></div>
-                            <div className="inn">2</div>
+                            <div className="inn">{day2}</div>
                         </div>
                         <div className="down">
                             <div className="shadow"></div>
-                            <div className="inn">2</div>
+                            <div className="inn">{day2}</div>
                         </div>
                     </a>
                 </li>
-                <li>
-                    <a href="#">
-                        <div className="up">
-                            <div className="shadow"></div>
-                            <div className="inn">3</div>
-                        </div>
-                        <div className="down">
-                            <div className="shadow"></div>
-                            <div className="inn">3</div>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <div className="up">
-                            <div className="shadow"></div>
-                            <div className="inn">4</div>
-                        </div>
-                        <div className="down">
-                            <div className="shadow"></div>
-                            <div className="inn">4</div>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <div className="up">
-                            <div className="shadow"></div>
-                            <div className="inn">5</div>
-                        </div>
-                        <div className="down">
-                            <div className="shadow"></div>
-                            <div className="inn">5</div>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <div className="up">
-                            <div className="shadow"></div>
-                            <div className="inn">6</div>
-                        </div>
-                        <div className="down">
-                            <div className="shadow"></div>
-                            <div className="inn">6</div>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <div className="up">
-                            <div className="shadow"></div>
-                            <div className="inn">7</div>
-                        </div>
-                        <div className="down">
-                            <div className="shadow"></div>
-                            <div className="inn">7</div>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <div className="up">
-                            <div className="shadow"></div>
-                            <div className="inn">8</div>
-                        </div>
-                        <div className="down">
-                            <div className="shadow"></div>
-                            <div className="inn">8</div>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <div className="up">
-                            <div className="shadow"></div>
-                            <div className="inn">9</div>
-                        </div>
-                        <div className="down">
-                            <div className="shadow"></div>
-                            <div className="inn">9</div>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <div className="up">
-                            <div className="shadow"></div>
-                            <div className="inn">0</div>
-                        </div>
-                        <div className="down">
-                            <div className="shadow"></div>
-                            <div className="inn">0</div>
-                        </div>
-                    </a>
-                </li>
+
             </ul>
           </div>
            <div className="seconds2">
-            <ul className="flip secondPlay2">
+            <ul className="flip secondPlay2" key={this.state.tenDayBit}>
                 <li>
                     <a href="#">
                         <div className="up">
                             <div className="shadow"></div>
-                            <div className="inn">0</div>
+                            <div className="inn">{tenDay1}</div>
                         </div>
                         <div className="down">
                             <div className="shadow"></div>
-                            <div className="inn">0</div>
+                            <div className="inn">{tenDay1}</div>
                         </div>
                     </a>
                 </li>
@@ -235,38 +155,14 @@ var FlipClock = React.createClass({
                     <a href="#">
                         <div className="up">
                             <div className="shadow"></div>
-                            <div className="inn">1</div>
+                            <div className="inn">{tenDay2}</div>
                         </div>
                         <div className="down">
                             <div className="shadow"></div>
-                            <div className="inn">1</div>
+                            <div className="inn">{tenDay2}</div>
                         </div>
                     </a>
                 </li>
-                <li>
-                    <a href="#">
-                        <div className="up">
-                            <div className="shadow"></div>
-                            <div className="inn">2</div>
-                        </div>
-                        <div className="down">
-                            <div className="shadow"></div>
-                            <div className="inn">2</div>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <div className="up">
-                            <div className="shadow"></div>
-                            <div className="inn">3</div>
-                        </div>
-                        <div className="down">
-                            <div className="shadow"></div>
-                            <div className="inn">3</div>
-                        </div>
-                    </a>
-              </li>
             </ul>
           </div>
         </div>

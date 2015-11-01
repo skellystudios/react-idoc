@@ -8,7 +8,8 @@ var InitialData = {
 		"long": -0.120933,
 		"open": true,
 		"starts": 0,
-		"ends": 23
+		"ends": 23,
+		"next_item": 3
 	},
 	"2" : {
 		"id": "2",
@@ -19,7 +20,8 @@ var InitialData = {
 		"long": -0.121933,
 		"open": false,
 		"starts": 2,
-		"ends": 23
+		"ends": 23,
+		"next_item": 3
 	},
 	"3" : {
 		"id": "3",
@@ -30,7 +32,8 @@ var InitialData = {
 		"long": -0.121133,
 		"open": false,
 		"starts": 3,
-		"ends": 33
+		"ends": 33,
+		"next_item": 4
 	},
 	"4" : {
 		"id": "4",
@@ -41,7 +44,8 @@ var InitialData = {
 		"long": -0.149089,
 		"open": false,
 		"starts": 4,
-		"ends": 24
+		"ends": 24,
+		"next_item": 5
 	},
 	"5" : {
 		"id": "5",
@@ -52,7 +56,8 @@ var InitialData = {
 		"long": -0.114413,
 		"open": false,
 		"starts": 8,
-		"ends": 27
+		"ends": 27,
+		"next_item": null
 	}
 };
 

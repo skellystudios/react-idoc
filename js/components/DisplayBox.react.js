@@ -33,14 +33,18 @@ var DisplayBox = React.createClass({
       }
       newItem = Store.getOpen()
       if (newItem != this.state.item){
-        clearInterval(this.timer);
+        clearInterval(this.timer);  
         this.setState({item: newItem})
         this.forceUpdate();
       }
     },
 
+    _onClick: function() {
+      Actions.openVideo(this.state.item.next_item)
+    },
+
     start: function(){
-        this.timer = setInterval(this.tick, 1500);
+        this.timer = setInterval(this.tick, 500);
     },
 
     stop: function(){
@@ -77,7 +81,7 @@ var DisplayBox = React.createClass({
       <div className="display-box">
       {this.state.hasEnded ?
          <div className="test">
-          Test
+          <a href="#" onClick={this._onClick}>Go to next video</a>
         </div>
       :
         <YouTube
