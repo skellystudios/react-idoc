@@ -12,6 +12,7 @@ var DisplayBox = React.createClass({
 
   getInitialState: function() {
     return {
+      item: this.props.item
     };
   },
 
@@ -28,6 +29,12 @@ var DisplayBox = React.createClass({
       this.state.hasEnded = Store.hasEnded();
       if (this.state.hasEnded) {
         // Surely not the best way of doing this
+        this.forceUpdate();
+      }
+      newItem = Store.getOpen()
+      if (newItem != this.state.item){
+        clearInterval(this.timer);
+        this.setState({item: newItem})
         this.forceUpdate();
       }
     },
@@ -53,7 +60,7 @@ var DisplayBox = React.createClass({
    * @return {object}
    */
   render: function() {
-    var item = this.props.item;
+    var item = this.state.item;
     const opts = {
       width: 500,
       height: 280,

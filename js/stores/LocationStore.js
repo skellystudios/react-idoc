@@ -11,12 +11,6 @@ var TimeStore = require('../stores/TimeStore');
 
 var hasEnded = false;
 
-function hideAll() {
-  for (var id in _items) {
-    _items[id].visible = false;
-  }
-}
-
 function closeAll() {
   for (var id in _items) {
     _items[id].open = false;
@@ -102,6 +96,7 @@ AppDispatcher.register(function(action) {
    switch(action.actionType) {
 
     case Constants.ITEM_OPEN_VIDEO:
+      console.log("Click view: " + action.id)
       closeAll();
       update(action.id, {"open": true});
       setEnded(false);
@@ -113,7 +108,6 @@ AppDispatcher.register(function(action) {
       break;
 
     case Constants.VIEW_LOCATION:
-      hideAll();
       update(action.id, {"visible": true});
       setEnded(false);
       Store.emitChange();

@@ -15,13 +15,8 @@ var FlipClock = React.createClass({
 
   _onChange: function() {
 
-
-    
-
     // Add an extra day
     this.state.time.add(1, "months");
-    console.log(this.state.time._d);
-
     this.forceUpdate();   
 
     // secondPlay();

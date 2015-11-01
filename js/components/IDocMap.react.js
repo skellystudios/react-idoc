@@ -11,8 +11,6 @@ var cx = require('react/lib/cx');
 
 var IDocMap = React.createClass({
 
-  propTypes: {
-  },
   mixins: [GoogleMapsMixin],
 
   getInitialState: function(){
@@ -20,16 +18,17 @@ var IDocMap = React.createClass({
       zoom: 12,
       center: new google.maps.LatLng(51.511523, -0.156728),
       mapStyles: this.props.mapStyles,
+      allPoints: this.props.allPoints,
     };
   },
 
-  // componentDidMount: function() {
-  //    // LocationStore.addChangeListener(this._onChange);
-  // },
+  componentDidMount: function() {
+     LocationStore.addChangeListener(this._onChange);
+  },
 
-  // componentWillUnmount: function() {
-  //   LocationStore.removeChangeListener(this._onChange);
-  // },
+  componentWillUnmount: function() {
+    LocationStore.removeChangeListener(this._onChange);
+  },
 
   // shouldComponentUpdate: function(nextProps, nextState) {
   //    return true;
@@ -39,7 +38,7 @@ var IDocMap = React.createClass({
 
 
     var markers = [];
-    var allPoints = this.props.allPoints
+    var allPoints = this.state.allPoints
     for (var key in allPoints) {
       if (allPoints[key].visible) {
         var position = new google.maps.LatLng(allPoints[key].lat, allPoints[key].long);
@@ -71,6 +70,7 @@ var IDocMap = React.createClass({
   },
 
   _onChange: function() {
+    this.state.allPoints = JSON.parse(JSON.stringify(LocationStore.getAll()));
     this.forceUpdate();
   }
 
