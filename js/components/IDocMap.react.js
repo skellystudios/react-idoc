@@ -6,6 +6,7 @@ var Marker = require("react-google-maps").Marker
 var ReactPropTypes = React.PropTypes;
 var Actions = require('../actions/Actions');
 var LocationStore = require('../stores/LocationStore');
+var Categories = require('../stores/Categories');
 
 var cx = require('react/lib/cx');
 
@@ -35,19 +36,29 @@ var IDocMap = React.createClass({
   // },
 
   render: function() {
-
-
     var markers = [];
     var allPoints = this.state.allPoints
     for (var key in allPoints) {
-      if (allPoints[key].visible) {
-        var position = new google.maps.LatLng(allPoints[key].lat, allPoints[key].long);
-        var visible = allPoints[key].visible; 
+      var icon = {
+        fillColor: '#FF0000',
+        fillOpacity: .6,
+        anchor: new google.maps.Point(0,0),
+        strokeWeight: 1,
+        scale: 1,
+      }
+      var point = allPoints[key];
+      var category = Categories[point.category];
+      icon.url = category.icon_url;
+      icon.scaledSize = new google.maps.Size(category.width,category.height);
+      console.log(icon);
+      if (point.visible) {
+        var position = new google.maps.LatLng(point.lat, point.long);
+        var visible = point.visible; 
         //var visible = true;
         markers.push(
           <Marker key={key} ref={key} position={position} 
                 visible={visible} onClick={this._handle_marker_click.bind(this, key)}
-                icon="https://maps.google.com/mapfiles/kml/shapes/parking_lot_maps.png" />
+                icon={icon} />
           );
       }
     }

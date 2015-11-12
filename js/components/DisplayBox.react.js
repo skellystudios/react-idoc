@@ -44,7 +44,7 @@ var DisplayBox = React.createClass({
     },
 
     start: function(){
-        this.timer = setInterval(this.tick, 500);
+        this.timer = setInterval(this.tick, 1500);
     },
 
     stop: function(){
@@ -84,16 +84,23 @@ var DisplayBox = React.createClass({
           <a href="#" onClick={this._onClick}>Go to next video</a>
         </div>
       :
-        <YouTube
-              url={item.url}           // required
-              key={item.id}
-              // id={string}             // defaults -> 'react-yt-player'
-              opts={opts}              // defaults -> {}
-              // onReady={func}          // defaults -> noop
-              onPlay={this.start}           // defaults -> noop
-              onPause={this.stop}          // defaults -> noop
-              onEnd={this.end}            // defaults -> noop
-          ></YouTube>
+        <div>
+          <YouTube
+                url={item.url}           // required
+                key={item.id}
+                // id={string}             // defaults -> 'react-yt-player'
+                opts={opts}              // defaults -> {}
+                // onReady={func}          // defaults -> noop
+                onPlay={this.start}           // defaults -> noop
+                onPause={this.stop}          // defaults -> noop
+                onEnd={this.end}            // defaults -> noop
+            >
+            </YouTube>
+            <h1>
+            {item.title}
+            </h1>
+            <p>{item.blurb}</p>
+          </div>
       }
       </div>
     );

@@ -24,6 +24,7 @@ function getStoreState() {
 
   V1 things to do –
   
+  > Title
   > Blurb boxes
   > "Jump to" box
   > Reveal all videos
@@ -31,6 +32,7 @@ function getStoreState() {
   > Key
   > Different colours
   > Next on the track
+  > 3 options:   1. Same theme 2. Linked 3. Choose from maps
 
   Add to calendar - 2nd tuesday in Dec
 
