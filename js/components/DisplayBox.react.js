@@ -66,8 +66,8 @@ var DisplayBox = React.createClass({
   render: function() {
     var item = this.state.item;
     const opts = {
-      width: 500,
-      height: 280,
+      width: 620,
+      height: 380,
       playerVars: { // https://developers.google.com/youtube/player_parameters
         autoplay: 1,
         controls:0,

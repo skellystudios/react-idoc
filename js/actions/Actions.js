@@ -52,6 +52,13 @@ var Actions = {
     });
   },
 
+  restartPlayer: function() {
+    console.log("RESTART_PLAYER");
+    AppDispatcher.dispatch({
+      actionType: Constants.RESTART_PLAYER,
+    });
+  },
+
 };
 
 module.exports = Actions;

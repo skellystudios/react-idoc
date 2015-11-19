@@ -1,12 +1,16 @@
   "use strict";
 var React = require('react/addons')
 var GoogleMapsMixin = require("react-google-maps").GoogleMapsMixin;
+var OverlayView = require("react-google-maps").OverlayView;
+
 var Map = require("react-google-maps").Map
 var Marker = require("react-google-maps").Marker
 var ReactPropTypes = React.PropTypes;
 var Actions = require('../actions/Actions');
 var LocationStore = require('../stores/LocationStore');
 var Categories = require('../stores/Categories');
+
+
 
 var cx = require('react/lib/cx');
 
@@ -49,8 +53,7 @@ var IDocMap = React.createClass({
       var point = allPoints[key];
       var category = Categories[point.category];
       icon.url = category.icon_url;
-      icon.scaledSize = new google.maps.Size(category.width,category.height);
-      console.log(icon);
+      icon.scaledSize = new google.maps.Size(category.width,category.height); 
       if (point.visible) {
         var position = new google.maps.LatLng(point.lat, point.long);
         var visible = point.visible; 
@@ -59,6 +62,14 @@ var IDocMap = React.createClass({
           <Marker key={key} ref={key} position={position} 
                 visible={visible} onClick={this._handle_marker_click.bind(this, key)}
                 icon={icon} />
+          );
+        markers.push(
+          <OverlayView position={position}>
+
+          <div >
+            HELLO 
+          </div>
+        </OverlayView>
           );
       }
     }
@@ -71,6 +82,7 @@ var IDocMap = React.createClass({
               styles={this.state.mapStyles}
               />
         {markers}
+
 
     </div>;
     },
@@ -88,7 +100,7 @@ var IDocMap = React.createClass({
 });
 
 IDocMap.defaultProps = {
-  mapStyles: [{"featureType":"all","elementType":"labels.text.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"all","elementType":"labels.text.stroke","stylers":[{"color":"#000000"},{"lightness":13}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#000000"}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#144b53"},{"lightness":14},{"weight":1.4}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#08304b"}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#0c4152"},{"lightness":5}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#000000"}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#0b434f"},{"lightness":25}]},{"featureType":"road.arterial","elementType":"geometry.fill","stylers":[{"color":"#000000"}]},{"featureType":"road.arterial","elementType":"geometry.stroke","stylers":[{"color":"#0b3d51"},{"lightness":16}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#000000"}]},{"featureType":"transit","elementType":"all","stylers":[{"color":"#146474"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#021019"}]}]
+  mapStyles: [{"featureType":"all","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"all","elementType":"labels.text.stroke","stylers":[{"color":"#000000"},{"lightness":13}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#000000"}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#144b53"},{"lightness":14},{"weight":1.4}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#08304b"}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#0c4152"},{"lightness":5}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#000000"}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#0b434f"},{"lightness":25}]},{"featureType":"road.arterial","elementType":"geometry.fill","stylers":[{"color":"#000000"}]},{"featureType":"road.arterial","elementType":"geometry.stroke","stylers":[{"color":"#0b3d51"},{"lightness":16}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#000000"}]},{"featureType":"transit","elementType":"all","stylers":[{"color":"#146474"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#021019"}]}]
 }
 
 module.exports = IDocMap;

@@ -22,5 +22,6 @@ module.exports = keyMirror({
   ITEM_VIEW_LOCATION: 8,
   ITEM_OPEN_VIDEO: 9,
   TICK: 10,
-  ITEM_VIDEO_ENDED: 11
+  ITEM_VIDEO_ENDED: 11,
+  RESTART_PLAYER: 12,
 });

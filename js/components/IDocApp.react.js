@@ -6,6 +6,7 @@
 var React = require('react');
 var Store = require('../stores/LocationStore');
 var DisplayBox = require('./DisplayBox.react');
+var MenuBox = require('./MenuBox.react');
 var FlipClock = require('./FlipClock.react');
 var IDocMap = require('./IDocMap.react')
 /**
@@ -24,17 +25,27 @@ function getStoreState() {
 
   V1 things to do –
   
-  > Title
-  > Blurb boxes
-  > "Jump to" box
-  > Reveal all videos
-  > Return to start
-  > Key
-  > Different colours
-  > Next on the track
-  > 3 options:   1. Same theme 2. Linked 3. Choose from maps
+  [x] Title
+  [x] Blurb boxes
+  [ ] Reveal all videos per theme
+  [ ] Return to start
+  [ ] Key
+  [x] Different colours
+  [x] Next on the track
+  [ ] 3 options:   1. Same theme 2. Linked 3. Choose from maps
+  [ ] Upon loading map -> show 
+  [ ] Name above each clip
+  [ ] Look up the background music from Anecdote podcast
 
-  Add to calendar - 2nd tuesday in Dec
+
+
+  Notes for talk:
+
+  - Ella came to me asking how we could collaborate
+  - Talk about how code wokrs
+  - Web has now got to the point where we can do this
+  - Show some changes going live
+  - Talk about open source software 
 
 */
 
@@ -83,6 +94,7 @@ var IDocApp = React.createClass({
           allPoints={this.state.allItems}
           googleMapsApi={google.maps}
         />
+        <MenuBox />
        </div>
   	);
   },

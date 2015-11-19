@@ -1,3 +1,6 @@
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300);
+
 html,
 body {
 	margin: 0;
@@ -6,7 +9,8 @@ body {
 }
 
 body {
-	font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	line-height: 1.4em;
 	color: #4d4d4d;
   	background-color: #999;
@@ -19,7 +23,7 @@ body {
   position: absolute;
   margin: 10px;
   border: solid 5px #999;
-  width: 510px;
+  width: 630px;
   min-height: 200px;
   color: #FFF;
 
@@ -36,6 +40,8 @@ body {
 
 .display-box h1{
 	margin: 20px;
+	text-transform: uppercase;
+	letter-spacing: 4pt;
 }
 
 .display-box p{
@@ -93,5 +99,19 @@ body {
 
 .time-container {
 	width: 100%;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
+.menu-box {
+	height: 200px;
+	width: 200px;
+	position: absolute;
+	right: 20px;
+	top: 10px; 
+	margin: 10px;
+  border: solid 5px #999;
+  color: #FFF;
+  background-color: #000;
+}
+
+}

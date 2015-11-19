@@ -9,6 +9,9 @@ var TICK_EVENT = 'tick';
 
 var globalTime = 1;
 
+function setGlobalTime(time){
+  globalTime = time;
+}
 
 function tick() {
   globalTime += 1;
@@ -42,6 +45,10 @@ AppDispatcher.register(function(action) {
   switch(action.actionType) {
     case Constants.TICK:
       tick();
+      TimeStore.emitTick();
+      break;
+    case Constants.RESTART_PLAYER:
+      setGlobalTime(0);
       TimeStore.emitTick();
       break;
 
