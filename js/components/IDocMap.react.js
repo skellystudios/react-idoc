@@ -15,6 +15,9 @@ var Categories = require('../stores/Categories');
 
 var cx = require('react/lib/cx');
 
+var mapStyles = [{"featureType":"all","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"all","elementType":"labels.text.stroke","stylers":[{"color":"#000000"},{"lightness":13}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#000000"}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#144b53"},{"lightness":14},{"weight":1.4}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#08304b"}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#0c4152"},{"lightness":5}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#000000"}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#0b434f"},{"lightness":25}]},{"featureType":"road.arterial","elementType":"geometry.fill","stylers":[{"color":"#000000"}]},{"featureType":"road.arterial","elementType":"geometry.stroke","stylers":[{"color":"#0b3d51"},{"lightness":16}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#000000"}]},{"featureType":"transit","elementType":"all","stylers":[{"color":"#146474"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#021019"}]}]
+
+
 var IDocMap = React.createClass({
 
   mixins: [GoogleMapsMixin],
@@ -59,7 +62,6 @@ var IDocMap = React.createClass({
         var position = new google.maps.LatLng(point.lat, point.long);
         var visible = point.visible; 
         var key1 = key + "1"
-        console.log(key1)
         //var visible = true;
         markers.push(
           <Marker key={key} ref={key} position={position} 
@@ -72,8 +74,10 @@ var IDocMap = React.createClass({
           key={key1}
           mapPaneName={OverlayView.OVERLAY_MOUSE_TARGET}
           >
-            <div>
-            highway
+            <div 
+            className="marker-label"
+            >
+              {point.title}
             </div>
           </OverlayView>
         );
@@ -89,9 +93,10 @@ var IDocMap = React.createClass({
                 }
               }}
               zoom={this.state.zoom} 
-              center={this.state.center} 
-              onCenterChanged={this._handle_map_center_changed} 
-              styles={this.state.mapStyles}
+              defaultCenter={{lat: 51.511523, lng: -0.156728}} 
+              defaultOptions={{
+                styles: mapStyles,
+              }}
               >
         {markers}
         </GoogleMap>
@@ -112,7 +117,6 @@ var IDocMap = React.createClass({
 });
 
 IDocMap.defaultProps = {
-  mapStyles: [{"featureType":"all","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"all","elementType":"labels.text.stroke","stylers":[{"color":"#000000"},{"lightness":13}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#000000"}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#144b53"},{"lightness":14},{"weight":1.4}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#08304b"}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#0c4152"},{"lightness":5}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#000000"}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#0b434f"},{"lightness":25}]},{"featureType":"road.arterial","elementType":"geometry.fill","stylers":[{"color":"#000000"}]},{"featureType":"road.arterial","elementType":"geometry.stroke","stylers":[{"color":"#0b3d51"},{"lightness":16}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#000000"}]},{"featureType":"transit","elementType":"all","stylers":[{"color":"#146474"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#021019"}]}]
 }
 
 module.exports = IDocMap;
