@@ -112,6 +112,7 @@ body {
   border: solid 5px #999;
   color: #FFF;
   background-color: #000;
+  display: none;
 }
 
 .marker-label {
