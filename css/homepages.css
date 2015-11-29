@@ -1,0 +1,145 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300);
+
+html {
+    padding: 0px;
+    margin: 0px;
+  }
+
+ body {
+  background: #000;
+  background-image: url("bg3.png");
+  background-size: cover;
+  padding: 0px;
+  font-family: 'Open Sans';
+ }
+
+ .main {
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 0px;
+  background-color:black; 
+  opacity:0.8;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  width: 70%;
+  padding: 40px 120px 0 120px;
+ }
+
+ h1 {
+  color: white;
+  font-family: 'Helvetica Neue', Helvetica;
+  font-weight: 200;
+  letter-spacing: 10pt;  
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  font-size: 30pt;
+  -webkit-animation-delay: 0.5s; /* Chrome, Safari, Opera */
+  animation-delay: 0.5s;
+  }
+
+
+  @keyframes fadein {
+      from {
+          opacity:0;
+      }
+      to {
+          opacity:1;
+      }
+  }
+  @-moz-keyframes fadein { /* Firefox */
+      from {
+          opacity:0;
+      }
+      to {
+          opacity:1;
+      }
+  }
+  @-webkit-keyframes fadein { /* Safari and Chrome */
+      from {
+          opacity:0;
+      }
+      to {
+          opacity:1;
+      }
+  }
+  @-o-keyframes fadein { /* Opera */
+      from {
+          opacity:0;
+      }
+      to {
+          opacity: 1;
+      }
+  }
+
+ p{
+  color: white;
+  letter-spacing: 2pt;  
+  font-weight: 300;
+  font-size: 10pt;
+  text-align: justify;
+  opacity: 0;
+  animation: fadein 2s;
+  -moz-animation: fadein 2s; /* Firefox */
+  -webkit-animation: fadein 2s; /* Safari and Chrome */
+  -o-animation: fadein 2s; /* Opera */
+ }
+
+ .fade-in {
+  animation: fadein 2s;
+  -moz-animation: fadein 2s; /* Firefox */
+  -webkit-animation: fadein 2s; /* Safari and Chrome */
+  -o-animation: fadein 2s; /* Opera */      
+  opacity: 0;
+  -webkit-animation-fill-mode:forwards; /*Chrome 16+, Safari 4+*/
+  -moz-animation-fill-mode:forwards; /*FF 5+*/
+  -o-animation-fill-mode:forwards; /*Not implemented yet*/
+  -ms-animation-fill-mode:forwards; /*IE 10+*/
+  animation-fill-mode:forwards; /*when the spec is finished*/
+ }
+
+ .fade-delay1 {
+  -webkit-animation-delay: 2s; /* Chrome, Safari, Opera */
+  animation-delay: 2s;
+ }
+
+.fade-delay2 {
+  -webkit-animation-delay: 5s; /* Chrome, Safari, Opera */
+  animation-delay: 5s;
+ }
+
+ .fade-delay3 {
+  -webkit-animation-delay: 8s; /* Chrome, Safari, Opera */
+  animation-delay: 8s;
+ }
+
+ .fade-delay4 {
+  -webkit-animation-delay: 11s; /* Chrome, Safari, Opera */
+  animation-delay: 11s;
+ }
+
+ .fade-delay5 {
+  -webkit-animation-delay: 14s; /* Chrome, Safari, Opera */
+  animation-delay: 14s;
+ }
+
+ .button-container {
+    text-align: center
+ }
+
+ .button {
+  background: #fff;
+  width: 100px;
+  padding: 10px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  text-transform: uppercase;
+  letter-spacing: 3pt;
+  }
+
+ a {
+  text-decoration: none;
+ }	

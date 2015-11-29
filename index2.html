@@ -3,115 +3,17 @@
   <head>
     <meta charset="utf-8">
     <title>Popup IDoc</title>
-    <style>
-
-    @import url(https://fonts.googleapis.com/css?family=Open+Sans:300);
-
-      html {
-        padding: 0px;
-        margin: 0px;
-      }
-
-     body {
-      background-image: url("bg3.png");
-      background-size: cover;
-      padding: 0px;
-     }
-
-     .main {
-      margin-left: 5%;
-      margin-right: 5%;
-      margin-top: 0px;
-      background-color:black; 
-      opacity:0.8;
-      height: 100%;
-      position: absolute;
-      top: 0px;
-      width: 70%;
-      padding: 40px 120px 0 120px;
-     }
-
-     h1 {
-      color: white;
-      font-family: 'Helvetica Neue', Helvetica;
-      font-weight: 200;
-      letter-spacing: 10pt;  
-      text-transform: uppercase;
-      text-align: center;
-      margin-top: 40px;
-      margin-bottom: 40px;
-      font-size: 30pt;
-      animation: fadein 2s;
-    -moz-animation: fadein 2s; /* Firefox */
-    -webkit-animation: fadein 2s; /* Safari and Chrome */
-    -o-animation: fadein 2s; /* Opera */
-     }
-
-
-@keyframes fadein {
-    from {
-        opacity:0;
-    }
-    to {
-        opacity:1;
-    }
-}
-@-moz-keyframes fadein { /* Firefox */
-    from {
-        opacity:0;
-    }
-    to {
-        opacity:1;
-    }
-}
-@-webkit-keyframes fadein { /* Safari and Chrome */
-    from {
-        opacity:0;
-    }
-    to {
-        opacity:1;
-    }
-}
-@-o-keyframes fadein { /* Opera */
-    from {
-        opacity:0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-     p{
-      color: white;
-      font-family: 'Open Sans';
-      letter-spacing: 2pt;  
-      font-weight: 300;
-      font-size: 10pt;
-      text-align: justify;
-           animation: fadein 5s;
-    -moz-animation: fadein 5s; /* Firefox */
-    -webkit-animation: fadein 5s; /* Safari and Chrome */
-    -o-animation: fadein 5s; /* Opera */
-     }
-    </style>
-   
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/flipclock.css">
 
   </head>
   <body>
-  <div class="main">
-    <h1>
-      The Temporary City
-      </h1>
-
-      <p> In the past decade cities like London have been transformed by the rapid rise of ‘pop-up’ culture; a fashion for temporary and mobile places which have become so prevalent that many are proclaiming the birth of ‘the temporary city’.</p>
-      <p>
-More than a mere trend, pop-up is becoming foundational to contemporary ways of imagining and producing cities. This is a vision in which the urban surface shifts daily as mobile cinemas, temporary bars, immersive theatres or shipping container shops navigate its nooks and niches, popping-up unexpectedly from these interstitial spaces.</p><p>
-Fleeting and unpredictable, pop-up is a geography that cannot be known, only followed and dedicated sites have emerged to track the appearance and movements of the city’s temporary events.</p><p>
-Even dwelling has become a nomadic activity as property guardianship, pop-up housing for the homeless and temporary shipping container homes destabilize ideas about how the city should be inhabited. And, as pop-up welfare clinics and pop-up public libraries emerge in the wake of austerity cuts the complexities of pop-up culture become more apparent; foregrounding its uneasy synthesis of flexibility and precarity.
-As pop-up becomes solidified as way of seeing the city is crucial to question what its logics are, how they have emerged and what they achieve for whom. What is ‘the temporary city’? How is it transforming urban space-time? And what are the politics of those transformations?</p><p>
-This interactive film explores three types of pop-up geography: pop-up cinemas, shipping container architectures and supper clubs in order to begin to unpick and understand the logics of the temporary city.
-
-
-</p>
-  </div>
-  
+    <section id="todoapp"></section>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.3/moment.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"></script>
+    <script type="text/javascript" src="js/flipclock.js"></script>
+    <script type="text/javascript" src="js/bundle.js"></script>
+  </body>
+</html>

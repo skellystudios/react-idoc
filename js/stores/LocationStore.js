@@ -11,6 +11,15 @@ var TimeStore = require('../stores/TimeStore');
 
 var hasEnded = false;
 
+
+function getDayOfYear(date){
+  var start = new Date(2015, 0, 0);
+  var diff = date - start;
+  var oneDay = 1000 * 60 * 60 * 24;
+  var day = Math.floor(diff / oneDay);
+  return day
+}
+
 function closeAll() {
   for (var id in _items) {
     _items[id].open = false;
@@ -24,12 +33,13 @@ function update(id, updates) {
 function updateVisiblePoints() {
   globalTime = TimeStore.getGlobalTime();
   for (var id in _items) {
-    if ((_items[id].starts < globalTime) && !_items[id].visible){
+    //console.log(getDayOfYear(_items[id].starts));
+    if (_items[id].starts < globalTime && !_items[id].visible){
       _items[id].visible = true;
       Store.emitChange();
     }
 
-    if ((_items[id].ends < globalTime) && _items[id].visible){
+    if (_items[id].ends < globalTime && _items[id].visible){
       _items[id].visible = false;
       Store.emitChange();
     }
