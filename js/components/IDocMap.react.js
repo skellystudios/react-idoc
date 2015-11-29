@@ -1,6 +1,7 @@
   "use strict";
 var React = require('react/addons')
 var GoogleMapsMixin = require("react-google-maps").GoogleMapsMixin;
+var GoogleMap = require("react-google-maps").GoogleMap;
 var OverlayView = require("react-google-maps").OverlayView;
 
 var Map = require("react-google-maps").Map
@@ -57,6 +58,8 @@ var IDocMap = React.createClass({
       if (point.visible) {
         var position = new google.maps.LatLng(point.lat, point.long);
         var visible = point.visible; 
+        var key1 = key + "1"
+        console.log(key1)
         //var visible = true;
         markers.push(
           <Marker key={key} ref={key} position={position} 
@@ -64,25 +67,34 @@ var IDocMap = React.createClass({
                 icon={icon} />
           );
         markers.push(
-          <OverlayView position={position}>
-
-          <div >
-            HELLO 
-          </div>
-        </OverlayView>
-          );
+          <OverlayView 
+          position={position} 
+          key={key1}
+          mapPaneName={OverlayView.OVERLAY_MOUSE_TARGET}
+          >
+            <div>
+            highway
+            </div>
+          </OverlayView>
+        );
+        
       }
     }
     // {...this.props}
     return <div  className="map" style={{height: "100%"}} >
-        <Map ref="map" style={{height: "100%"}} 
+        <GoogleMap ref="map" style={{height: "100%"}}
+              containerProps={{
+                style: {
+                  height: "100%",
+                }
+              }}
               zoom={this.state.zoom} 
               center={this.state.center} 
               onCenterChanged={this._handle_map_center_changed} 
               styles={this.state.mapStyles}
-              />
+              >
         {markers}
-
+        </GoogleMap>
 
     </div>;
     },

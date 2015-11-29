@@ -14,8 +14,7 @@ var MenuBox = React.createClass({
         <div className="test">
           <a href="#" onClick={this._onClick}>Restart Player</a>
         </div>
-      </div>
-      )}
+      </div>      )}
 
 });
 
