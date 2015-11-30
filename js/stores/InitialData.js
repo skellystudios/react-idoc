@@ -44,7 +44,7 @@ var InitialData = {
 	},
 	"4" : {
 		"id": "4",
-		"url": "https://www.youtube.com/watch?v=k6NzHTisRpo",
+		"url": "https://www.youtube.com/watch?v=PLZsG6PIexg",
 		"title": "The General's Barber",
 		"blurb": "A barber shop in a container: Hair cuts, beard trims, and free beer.",
 		"visible": false,	
