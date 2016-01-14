@@ -12,7 +12,8 @@ var DisplayBox = React.createClass({
 
   getInitialState: function() {
     return {
-      item: this.props.item
+      item: this.props.item,
+      isClosed: false
     };
   },
 
@@ -34,6 +35,7 @@ var DisplayBox = React.createClass({
       newItem = Store.getOpen()
       if (newItem != this.state.item){
         clearInterval(this.timer);  
+        this.setState({isClosed: false})
         this.setState({item: newItem})
         this.forceUpdate();
       }
@@ -54,6 +56,11 @@ var DisplayBox = React.createClass({
     end: function(){
         clearInterval(this.timer);
         Actions.videoEnded();
+    },
+
+    close: function(){
+        this.stop();
+        this.setState({isClosed: true});
     },
 
     tick: function(){
@@ -77,16 +84,25 @@ var DisplayBox = React.createClass({
         disablekb: 1,
       },
     };
+
+    displayBoxClassName = "display-box"
+    if (this.state.isClosed){
+      displayBoxClassName += " closed";
+    }
     return (
-      <div className="display-box">
-      {this.state.hasEnded ?
+      <div className={displayBoxClassName}>
+     
+      <div className="close">
+       <a href="#" onClick={this.close}>&#x2715;</a>
+      </div>
+      {this.state.hasEnded || this.state.isClosed ?
          <div className="test">
           <a href="#" onClick={this._onClick}>Go to next video</a>
         </div>
       :
         <div>
           <YouTube
-                url={item.url}           // required
+                url={item.url}              // required
                 key={item.id}
                 // id={string}             // defaults -> 'react-yt-player'
                 opts={opts}              // defaults -> {}
