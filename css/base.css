@@ -30,6 +30,11 @@ body {
   background-color: #000;
 }
 
+
+.closed {
+	display: none;
+}
+
 .display-box .next{
 	margin: 50px;
 	width: 300px;
@@ -48,7 +53,20 @@ body {
 	margin: 20px;
 }
 
-#todoapp {
+.display-box .close{
+    position: absolute;
+    right: 5px;
+    top: 1px;
+    font-size: 14pt;
+    color: #ccc;
+}
+
+.display-box .close a{
+    color: #ccc;
+    text-decoration: none;
+}
+
+#app {
 	/*height: 500px;*/
 	height: 100%;
 	background: #fff;
