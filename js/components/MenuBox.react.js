@@ -12,7 +12,7 @@ var MenuBox = React.createClass({
     return (
       <div className="menu-box">
         <div className="test">
-          <a href="#" onClick={this._onClick}>Restart Player</a>
+          <a href="menu.html" onClick={this._onClick}>Back to menu &gt;</a>
         </div>
       </div>      )}
 

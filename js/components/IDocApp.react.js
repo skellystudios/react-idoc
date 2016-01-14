@@ -28,7 +28,7 @@ function getStoreState() {
   [x] Title
   [x] Blurb boxes
   [ ] Reveal all videos per theme
-  [ ] Return to start
+  [x] Return to start
   [ ] Key
   [x] Different colours
   [x] Next on the track
