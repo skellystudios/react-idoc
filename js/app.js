@@ -13,5 +13,5 @@ var IDocApp = require('./components/IDocApp.react');
 
 React.render(
   <IDocApp />,
-  document.getElementById('todoapp')
+  document.getElementById('app')
 );
