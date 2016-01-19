@@ -87,6 +87,19 @@ var Store = assign({}, EventEmitter.prototype, {
     return true;
   },
 
+  /** 
+   * Return the video locations for a given category
+   */
+  getByCategory: function(category) {
+    results = []
+    for (var id in _items) {
+      if (_items[id].category == category) {
+        results.push(_items[id])
+      }
+    }
+    return results;
+  },
+
   emitChange: function() {
     this.emit(CHANGE_EVENT);
   },
