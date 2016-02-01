@@ -20,7 +20,7 @@ function getStoreState() {
     activeLocation: Store.getActive(),
     openVideos: Store.getOpen(),
     hasEnded: Store.hasEnded(),
-    galleryVideos: Store.getByCategory("edible"),
+    galleryVideos: Store.getByCategory(gallery),
   };
 }
 
@@ -38,16 +38,24 @@ function getParameterByName(name) {
   
   [x] Title
   [x] Blurb boxes
-  [ ] Reveal all videos per theme
+  [x] Reveal all videos per theme
   [x] Return to start
-  [ ] Key
   [x] Different colours
   [x] Next on the track
-  [ ] 3 options:   1. Same theme 2. Linked 3. Choose from maps
-  [ ] Upon loading map -> show 
+  [x] Upon loading map -> show 
   [x] Name above each clip
   [x] Look up the background music from Anecdote podcast
 
+
+  [ ] Redesign the "next" pages
+    - Close button
+    - Next video button
+  [ ] Key
+  [ ] "outside the pop-up city"
+    - Link at the end of the video
+    - Pop up modal over most of screen
+    - Title, Image, Text
+  [ ] Skip fade animation on P1
 
 */
 
@@ -89,18 +97,18 @@ var IDocApp = React.createClass({
       return (
         <div 
             className="idoc-app"> 
-        <FlipClock
-            time="0"
-          />
-        <DisplayBox
-            item={this.state.openVideos}
-            key={this.state.openVideos.id}
-            hasEnded={this.state.hasEnded}
-          />
-        <IDocMap
-            allPoints={this.state.allItems}
-            googleMapsApi={google.maps}
-          />
+          <FlipClock
+              time="0"
+            />
+          <DisplayBox
+              item={this.state.openVideos}
+              key={this.state.openVideos.id}
+              hasEnded={this.state.hasEnded}
+            />
+          <IDocMap
+              allPoints={this.state.allItems}
+              googleMapsApi={google.maps}
+            />
           <MenuBox />
          </div>
     	);
@@ -111,7 +119,8 @@ var IDocApp = React.createClass({
 
       return (
         <div className="idoc-app"> 
-          <VideoGallery videos={videos} />
+          <VideoGallery videos={videos} categoryLabel={gallery} />
+          <MenuBox />
         </div>
         );
     }

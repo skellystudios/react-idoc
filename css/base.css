@@ -68,11 +68,11 @@ body {
 
 #app {
 	/*height: 500px;*/
-	height: 100%;
+	min-height: 100%;
 	background: #fff;
-	background: rgba(255, 255, 255, 0.9);
+	background: rgba(0, 0, 0, 0.85);
 	/*margin: 130px 0 40px 0;*/
-	border: 1px solid #ccc;
+	border: 1px solid #000;
 	position: relative;
 	border-top-left-radius: 2px;
 	border-top-right-radius: 2px;
@@ -159,3 +159,79 @@ body {
     letter-spacing: 1pt;
     font-size: 8pt;
 }
+
+
+.video-thumb img {
+	margin: 0 auto;
+	height: 250px;
+	width: 250px;
+	display: block;
+}
+
+.video-thumb a, 
+.video-thumb a:hover,
+.video-thumb a:visited {
+	color: #fff;
+}
+
+.video-thumb  {
+	height: 300px;
+	width: 300px;
+	display: inline-block;
+	text-align: center;
+}
+
+
+
+.video-gallery h1 {
+  color: white;
+  font-family: 'Helvetica Neue', Helvetica;
+  font-weight: 200;
+  letter-spacing: 10pt;  
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  font-size: 30pt;
+  -webkit-animation-delay: 0.5s; /* Chrome, Safari, Opera */
+  animation-delay: 0.5s;
+  }
+
+.video-gallery .blurb {
+  font-family: 'Helvetica Neue', Helvetica;
+  color: #fff;
+  margin-bottom: 40px;
+  margin-right: auto;
+  margin-left: auto;
+  width: 400px;
+  width: 820px;
+    font-size: 12pt;
+    letter-spacing: 1pt;
+    font-weight: 100;
+    text-align: justify;
+}
+
+.videoThumbs {
+	text-align: center;
+}
+
+body {
+  background: #000;
+  background-image: url("../images/bg3.png");
+  background-size: cover;
+  padding: 0px;
+  font-family: 'Open Sans';
+}
+
+
+.video-gallery h3 {
+  color: white;
+  font-family: 'Helvetica Neue', Helvetica;
+  font-weight: 200;
+  font-size: 12pt;
+  letter-spacing: 2pt;  
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  }

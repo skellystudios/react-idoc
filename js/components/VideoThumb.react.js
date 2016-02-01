@@ -14,10 +14,10 @@ var VideoThumb = React.createClass({
     var videoId = this.props.url.split("=")[1];
     var videoThumbUrl = "http://img.youtube.com/vi/" + videoId + "/0.jpg";
     return (
-    <div key={this.props.key} className="video-thumb" style={{height: "100px", width: "100px"}} >
+    <div key={this.props.key} className="video-thumb" >
         <a href={this.state.url}>
           <img src={videoThumbUrl} />
-          {this.props.title}
+          <h3>{this.props.title}</h3>
         </a>
     </div>
     );
