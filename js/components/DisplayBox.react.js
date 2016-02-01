@@ -86,7 +86,7 @@ var DisplayBox = React.createClass({
     };
 
     displayBoxClassName = "display-box"
-    if (this.state.isClosed){
+    if (this.state.isClosed || !this.state.item.url){
       displayBoxClassName += " closed";
     }
     return (

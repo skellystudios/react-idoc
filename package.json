@@ -10,7 +10,7 @@
     "object-assign": "^1.0.0",
     "react": "0.13.0",
     "deep-equal": "^0.2.1",
-    "react-youtube": "*",
+    "react-youtube": "4.0.0",
     "react-google-maps": "^3"
   },
   "devDependencies": {
