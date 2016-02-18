@@ -3,6 +3,7 @@ var ReactPropTypes = React.PropTypes;
 var Actions = require('../actions/Actions');
 var YouTube = require('react-youtube');
 var Store = require('../stores/LocationStore');
+var Categories = require('../stores/Categories');
 
 var DisplayBox = React.createClass({
 
@@ -34,7 +35,7 @@ var DisplayBox = React.createClass({
       }
       newItem = Store.getOpen()
       if (newItem != this.state.item){
-        clearInterval(this.timer);  
+        clearInterval(this.timer);
         this.setState({isClosed: false})
         this.setState({item: newItem})
         this.forceUpdate();
@@ -72,6 +73,7 @@ var DisplayBox = React.createClass({
    */
   render: function() {
     var item = this.state.item;
+    var category = ""
     const opts = {
       width: 620,
       height: 380,
@@ -84,20 +86,31 @@ var DisplayBox = React.createClass({
         disablekb: 1,
       },
     };
-
+    console.log(item);
+    if (item.category) {
+      console.log(item)
+      category = Categories[item.category].name
+    }
     displayBoxClassName = "display-box"
     if (this.state.isClosed || !this.state.item.url){
       displayBoxClassName += " closed";
     }
     return (
       <div className={displayBoxClassName}>
-     
+
       <div className="close">
        <a href="#" onClick={this.close}>&#x2715;</a>
       </div>
-      {this.state.hasEnded || this.state.isClosed ?
-         <div className="test">
-          <a href="#" onClick={this._onClick}>Go to next video</a>
+      {true || this.state.isClosed ?
+        <div className="where-next">
+            <h1> Where to next? </h1>
+          <div className="button">
+              <a href="#" onClick={this._onClick}>See what&#39;s next in {category}</a>
+          </div>
+          <h2>or</h2>
+          <div className="button">
+              <a href="#" onClick={this.close}>Continue exploring the temporary city</a>
+          </div>
         </div>
       :
         <div>
