@@ -47,7 +47,7 @@ var DisplayBox = React.createClass({
     },
 
     start: function(){
-        this.timer = setInterval(this.tick, 1500);
+        this.timer = setInterval(this.tick, 900);
     },
 
     stop: function(){
@@ -101,11 +101,11 @@ var DisplayBox = React.createClass({
       <div className="close">
        <a href="#" onClick={this.close}>&#x2715;</a>
       </div>
-      {true || this.state.isClosed ?
+      {this.state.hasEnded | this.state.isClosed ?
         <div className="where-next">
             <h1> Where to next? </h1>
           <div className="button">
-              <a href="#" onClick={this._onClick}>See what&#39;s next in {category}</a>
+              <a href="#" onClick={this._onClick}>{item.next_item_title}</a>
           </div>
           <h2>or</h2>
           <div className="button">
