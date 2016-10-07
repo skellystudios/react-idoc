@@ -147,7 +147,8 @@ var InitialData = {
 		"ends": 84,
 		"next_item": 15,
 		"category": "container",
-		"next_item_title": "See more ways to customize a container..."
+		"next_item_title": "See more ways to customize a container...",
+		"outside_the_hidden": "http://blog.rismedia.com/wp-content/uploads/2015/02/iStock_000015541037_Large.jpg"
 	},
 	"11": {
 		"id": "11",

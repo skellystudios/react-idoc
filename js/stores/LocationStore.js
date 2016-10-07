@@ -10,6 +10,7 @@ var _items = require('../stores/InitialData');
 var TimeStore = require('../stores/TimeStore');
 
 var hasEnded = false;
+var outsideImageBoxOpen = false;
 
 
 function getDayOfYear(date){
@@ -51,7 +52,9 @@ function setEnded(x) {
   hasEnded = x;
 }
 
-
+function setOutsideImageOpen(x) {
+  outsideImageBoxOpen = x;
+}
 
 var Store = assign({}, EventEmitter.prototype, {
 
@@ -63,7 +66,7 @@ var Store = assign({}, EventEmitter.prototype, {
     return _items;
   },
 
-  /** 
+  /**
    * Return any visible locations
    */
   getActive: function() {
@@ -75,7 +78,7 @@ var Store = assign({}, EventEmitter.prototype, {
     return true;
   },
 
-  /** 
+  /**
    * Return the video location that is open, if any
    */
   getOpen: function() {
@@ -87,7 +90,7 @@ var Store = assign({}, EventEmitter.prototype, {
     return true;
   },
 
-  /** 
+  /**
    * Return the video locations for a given category
    */
   getByCategory: function(category) {
@@ -126,6 +129,16 @@ AppDispatcher.register(function(action) {
       Store.emitChange();
       break;
 
+    case Constants.ITEM_OPEN_OUTSIDE_IMAGE:
+      setOutsideImageOpen(true);
+      Store.emitChange();
+      break;
+
+    case Constants.ITEM_CLOSE_OUTSIDE_IMAGE:
+      setOutsideImageOpen(false);
+      Store.emitChange();
+      break;
+
     case Constants.TICK:
       updateVisiblePoints();
       break;
@@ -140,10 +153,10 @@ AppDispatcher.register(function(action) {
       setEnded(true);
       Store.emitChange();
       break;
-  
+
     default:
         // no op
-    }   
+    }
 
 });
 
