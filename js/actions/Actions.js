@@ -34,6 +34,25 @@ var Actions = {
       id: id
     });
   },
+  /**
+   * Opens the "outside container city" popup thing
+   */
+  openOutsideContainerCity: function() {
+    console.log("OPEN OUTSIDE CONTAINER CITY");
+    AppDispatcher.dispatch({
+      actionType: Constants.ITEM_OPEN_OUTSIDE_IMAGE,
+    });
+  },
+
+  /**
+   * Closes the "outside container city" popup thing
+   */
+  closeOutsideContainerCity: function() {
+    console.log("CLOSE OUTSIDE CONTAINER CITY");
+    AppDispatcher.dispatch({
+      actionType: Constants.ITEM_CLOSE_OUTSIDE_IMAGE,
+    });
+  },
 
   /**
    * Moved the global timer on by one tick

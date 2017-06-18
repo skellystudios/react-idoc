@@ -46,9 +46,6 @@ var DisplayBox = React.createClass({
       Actions.openVideo(this.state.item.next_item)
     },
 
-    // _onChange: function() {
-    //   console.log("Stuff")
-    // },
 
     start: function(){
         this.timer = setInterval(this.tick, 900);
