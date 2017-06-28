@@ -290,3 +290,27 @@ body {
 	  margin-bottom: 10px;
 	  font-size: 10pt;
 	  }
+
+
+.image-lightbox {
+	height:100%;
+	width: 100%;
+    text-align: center;
+    position: fixed;
+    background: rgba(0,0,0,0.8);
+    z-index: 99999999999;
+    /*margin: 10%;*/
+}
+
+.image-lightbox img{
+	height: 600px;
+	margin-top: 30px;
+}
+
+.image-lightbox .close {
+    color: white;
+}
+
+.image-lightbox .wrapper {
+	position: relative;
+}

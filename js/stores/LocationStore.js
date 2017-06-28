@@ -56,7 +56,12 @@ function setOutsideImageOpen(x) {
   outsideImageBoxOpen = x;
 }
 
+
 var Store = assign({}, EventEmitter.prototype, {
+
+  isOutsideImageOpen: function() {
+    return outsideImageBoxOpen;
+  },
 
   hasEnded: function() {
     return hasEnded;
@@ -131,6 +136,7 @@ AppDispatcher.register(function(action) {
 
     case Constants.ITEM_OPEN_OUTSIDE_IMAGE:
       setOutsideImageOpen(true);
+      console.log("yes");
       Store.emitChange();
       break;
 

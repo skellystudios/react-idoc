@@ -10,11 +10,13 @@ var VideoGallery = require('./VideoGallery.react');
 var MenuBox = require('./MenuBox.react');
 var FlipClock = require('./FlipClock.react');
 var IDocMap = require('./IDocMap.react')
+var ImageLightbox = require('./ImageLightbox.react')
 /**
  * Retrieve the current data from the Store
  */
 function getStoreState() {
   gallery = getParameterByName("gallery")
+  console.log(Store.isOutsideImageOpen())
   return {
     allItems: JSON.parse(JSON.stringify(Store.getAll())),
     activeLocation: Store.getActive(),
@@ -110,6 +112,11 @@ var IDocApp = React.createClass({
               googleMapsApi={google.maps}
             />
           <MenuBox />
+      
+          <ImageLightbox 
+              src={this.state.lightboxSrc}
+              />
+            
          </div>
     	);
     } else {

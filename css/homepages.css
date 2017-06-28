@@ -11,6 +11,8 @@ html {
   background-size: cover;
   padding: 0px;
   font-family: 'Open Sans';
+
+    background-repeat: no-repeat;
  }
 
  .main {
@@ -125,6 +127,30 @@ html {
       padding: 30px;
       border-left: 1px solid #fff;
   }
+
+
+  .bottom-item {
+    clear: both;
+    width: 100%;
+    text-align: center;
+    padding-top: 40px;
+  }
+
+  .bottom-item h3 {
+    clear: both;
+    width: 100%;
+    text-align: center;
+    font-size: 0.8em;
+  }
+
+  .bottom-item a#more, .bottom-item a#more:visited, .bottom-item a#more:hover {
+    clear: both;
+    width: 100%;
+    text-align: center;
+    font-size: 0.8em;
+    color: white;
+  }
+
 
  .fade-text {
   opacity: 0;

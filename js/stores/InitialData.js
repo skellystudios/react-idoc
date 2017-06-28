@@ -27,11 +27,12 @@ var InitialData = {
 		"ends": 100,
 		"next_item": 14,
 		"category": "reel",
-		"next_item_title": "Open more of London's closed doors..."
+		"next_item_title": "Open more of London's closed doors...",
+		"outside_the_hidden": "../images/outside/cinema.jpg",
 	},
 	"3": {
 		"id": "3",
-		"url": "https://www.youtube.com/watch?v=kjiONu3UQLE",
+		"url": "https://www.youtube.com/watch?v=fN9iMYOpO_M",
 		"title": "Container City",
 		"blurb": "Out east along the Thames at Trinity Buoy Warf is container city, a development that is prototypical of London’s many container spaces. The containers, seemingly beached on the banks of the river are being used as offices, cafes, schools or studios. The sounds you can hear are from the floodtide listening post, which converts tidal flow data into notation. ",
 		"visible": true,
@@ -42,7 +43,8 @@ var InitialData = {
 		"ends": 100,
 		"next_item": 11,
 		"category": "container",
-		"next_item_title": "Follow the river..."
+		"next_item_title": "Follow the river...",
+		"outside_the_hidden": "../images/outside/container_city.jpg",
 	},
 	"4": {
 		"id": "4",
@@ -72,7 +74,8 @@ var InitialData = {
 		"ends": 100,
 		"next_item": 10,
 		"category": "container",
-		"next_item_title": "See more ways to customize a container..."
+		"next_item_title": "See more ways to customize a container...",
+		"outside_the_hidden": "../images/outside/heygate.jpg",
 	},
 	"6": {
 		"id": "6",
@@ -91,7 +94,8 @@ var InitialData = {
 	},
 	"7": {
 		"id": "7",
-		"url": "https://www.youtube.com/watch?v=yFKVlIOp590", //https://www.youtube.com/watch?v=fW8UQvPUQbs",
+		// Short video "url": "https://www.youtube.com/watch?v=jhFDyDgMVUI",
+		"url": "https://www.youtube.com/watch?v=FloTVEpRyYY", //https://www.youtube.com/watch?v=fW8UQvPUQbs",
 		"title": "The Culinary Anthropologist",
 		"blurb": "The Culinary Anthropologist- Secret Kitchen: Anna, chef and anthropologist, runs supper clubs from her home in North London. Tonight is a Burns night themed event.",
 		"visible": true,
@@ -102,7 +106,9 @@ var InitialData = {
 		"ends": 100,
 		"next_item": 10,
 		"category": "edible",
-		"next_item_title": "Open more of London's closed doors..."
+		"next_item_title": "Open more of London's closed doors...",
+		"outside_the_hidden": "../images/outside/people.jpg",
+
 	},
 	"8": {
 		"id": "8",
@@ -132,7 +138,8 @@ var InitialData = {
 		"ends": 122,
 		"next_item": 3,
 		"category": "edible",
-		"next_item_title": "Follow the river..."
+		"next_item_title": "Follow the river...",
+		"outside_the_hidden": "../images/outside/supper_club.jpg",
 	},
 	"10": {
 		"id": "10",
@@ -163,12 +170,13 @@ var InitialData = {
 		"ends": 254,
 		"next_item": 9,
 		"category": "reel",
-		"next_item_title": "Follow the river..."
+		"next_item_title": "Follow the river...",
+		"outside_the_hidden": "../images/outside/cinema.jpg",
 	},
 	"13": {
 		"id": "13",
 		"url": "https://www.youtube.com/watch?v=J8Cp-zm7TLQ", // https://www.youtube.com/watch?v=1KkpivEsitE",
-		"title": "Pulp Fiction",
+		"title": "Pulp Kitchen",
 		"blurb": "Tonight Feed Me Films are running ‘Pulp Kitchen’. A menu of Pulp Fiction inspired drinks and snacks has been designed to immersive viewers in the film’s sensory landscape.",
 		"visible": false,
 		"lat": 51.498042,
@@ -182,7 +190,7 @@ var InitialData = {
 	},
 	"14": {
 		"id": "14",
-		"url": "https://www.youtube.com/watch?v=8vqtwLI6dVc",
+		"url": "https://www.youtube.com/watch?v=FloTVEpRyYY",
 		"title": "Latitudinal Cuisine",
 		"blurb": "Latitudinal Cuisine is a regular supper club with the tag line ‘meet local, eat global’. Each day of the year is assigned a different longitude and latitude around which the events are usually themed. Tonight’s dinner, however, is themed more generally around travel and includes a performance from the band ‘Safar’ which means travel in Arabic. ",
 		"visible": false,
@@ -208,7 +216,8 @@ var InitialData = {
 		"ends": 242,
 		"next_item": 8,
 		"category": "container",
-		"next_item_title": "Explore other transforming urban spaces"
+		"next_item_title": "Explore other transforming urban spaces",
+		"outside_the_hidden": "../images/outside/people.jpg",
 	},
 	"16": {
 		"id": "16",

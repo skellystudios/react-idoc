@@ -105,7 +105,6 @@ var DisplayBox = React.createClass({
 
       <div className="close">
        <a href="#" onClick={this.close}>&#x2715;</a>
-       <a href="#" onClick={this.outsideContainerCity}>#</a>
       </div>
 
       {this.state.hasEnded | this.state.isClosed ?
@@ -118,6 +117,16 @@ var DisplayBox = React.createClass({
           <div className="button">
               <a href="#" onClick={this.close}>Continue exploring the temporary city</a>
           </div>
+          {item.outside_the_hidden ?
+          <div>
+            <h2>or</h2>
+            <div className="button">
+                <a href="#" onClick={this.outsideContainerCity}>See what's happening outside the temporary city</a>
+            </div>   
+            </div>      
+            :
+            <div></div>
+          }
         </div>
       :
         <div>
