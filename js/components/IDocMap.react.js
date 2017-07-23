@@ -35,7 +35,7 @@ var IDocMap = React.createClass({
   render: function() {
     var markers = [];
     for (var key in this.state.allPoints) {
-      
+
       var point = this.state.allPoints[key];
       var category = Categories[point.category];
 
@@ -47,27 +47,27 @@ var IDocMap = React.createClass({
         scale: 1,
       }
       icon.url = category.icon_url;
-      icon.scaledSize = new google.maps.Size(category.width,category.height); 
-      
+      icon.scaledSize = new google.maps.Size(category.width,category.height);
+
 
       if (point.visible) {
-        
+
         var position = new google.maps.LatLng(point.lat, point.long);
-        var visible = point.visible; 
+        var visible = point.visible;
         var label_key = key + "_label"
         //var visible = true;
         markers.push(
-          <Marker key={key} ref={key} position={position} 
+          <Marker key={key} ref={key} position={position}
                 visible={visible} onClick={this._handle_marker_click.bind(this, key)}
                 icon={icon} />
           );
         markers.push(
-          <OverlayView 
-          position={position} 
+          <OverlayView
+          position={position}
           key={label_key}
           mapPaneName={OverlayView.OVERLAY_MOUSE_TARGET}
           >
-            <div 
+            <div
             className="marker-label"
             >
               <p>
@@ -76,15 +76,15 @@ var IDocMap = React.createClass({
             </div>
           </OverlayView>
         );
-        
+
       }
     }
 
     return <div  className="map" style={{height: "100%"}} >
         <GoogleMap ref="map" style={{height: "100%"}}
               containerProps={{ style: { height: "100%", } }}
-              defaultZoom={12} 
-              defaultCenter={{lat: 51.511523, lng: -0.156728}} 
+              defaultZoom={12}
+              defaultCenter={{lat: 51.511523, lng: -0.156728}}
               defaultOptions={{ styles: mapStyles, }}
               >
         {markers}
