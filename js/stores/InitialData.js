@@ -16,7 +16,7 @@ var InitialData = {
 	},
 	"2": {
 		"id": "2",
-		"url": "https://www.youtube.com/watch?v=bqkul_WQsIM", // https://www.youtube.com/watch?v=26Dmu-AB4a0
+		"url": "https://www.youtube.com/watch?v=sPgjndFqqwY", // https://www.youtube.com/watch?v=26Dmu-AB4a0
 		"title": "Backyard Cinema",
 		"blurb": "Backyard Cinema are staging an immersive screening of Baz Lurham’s Romeo and Juliet in St Mary’s Church in Baker Street. The event is staffed by The Montague’s Hawaiian shirt clad gang and accompanied by a live choir.",
 		"visible": true,
@@ -155,7 +155,7 @@ var InitialData = {
 		"next_item": 15,
 		"category": "container",
 		"next_item_title": "See more ways to customize a container...",
-		"outside_the_hidden": "http://blog.rismedia.com/wp-content/uploads/2015/02/iStock_000015541037_Large.jpg"
+		"outside_the_hidden": "../images/outside/container_city.jpg"
 	},
 	"11": {
 		"id": "11",

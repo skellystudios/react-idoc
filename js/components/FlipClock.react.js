@@ -17,19 +17,24 @@ var FlipClock = React.createClass({
 
     // Add an extra day
     this.state.time.add(1, "days");
-    this.forceUpdate();   
+    this.forceUpdate();
 
     // secondPlay();
-    // if ((this.state.time.date() == 01) 
+    // if ((this.state.time.date() == 01)
     //     | (this.state.time.date() == 10)
-    //     | (this.state.time.date() == 20) 
+    //     | (this.state.time.date() == 20)
     //     | (this.state.time.date() == 30)){
-    //   second2Play(); 
+    //   second2Play();
     // }
+
+
+	if (this.state.time.date() == 10) {
+		window.location = "end.html"
+	}
 
     if (this.state.time.date() == 1) {
         this.state.monthBit = 1 ^ this.state.monthBit ;
-        minutePlay(); 
+        minutePlay();
     }
 
     if ((this.state.time.date() == 0) ||
@@ -38,13 +43,13 @@ var FlipClock = React.createClass({
         (this.state.time.date() == 30)
        ) {
         this.state.tenDayBit = 1 ^ this.state.tenDayBit ;
-        second2Play(); 
+        second2Play();
     }
-    
+
     this.state.dayBit = 1 ^ this.state.dayBit ;
     secondPlay();
 
-    
+
   },
 
   getInitialState: function() {
@@ -169,7 +174,7 @@ var FlipClock = React.createClass({
        {/* <div className="global-time range-slider">
           Time: {time}
           <input type="range" min="0" max="100" value={time} id="fader" step="1" />
-        </div>  
+        </div>
       */}
       </div>
 

@@ -6,9 +6,31 @@
 
     <link rel="stylesheet" href="css/homepages.css">
 
-
+<script>
+	/*
+		So yeah, obviously this isn't fort knox. Welcome, hope you enjoy!
+	*/
+				function passWord() {
+				var testV = 1;
+				var pass1 = prompt('Please Enter Your Password',' ');
+				while (testV < 3) {
+				if (!pass1)
+				history.go(-1);
+				if (pass1.toLowerCase() == "letmein") {
+				alert('You Got it Right!');
+				}
+				testV+=1;
+				var pass1 =
+				prompt('Access Denied - Password Incorrect, Please Try Again.','Password');
+				}
+				if (testV ==3)
+				history.go(-1);
+				return " ";
+				}
+</script>
   </head>
   <body>
+<script>passWord()</script>
   <div class="main">
     <h1 class="fade-in">
       The Temporary City
@@ -22,7 +44,7 @@
     </p>
 
     <p class="fade-text fade-in fade-delay3">
-     This interactive film explores three types of pop-up geography: pop-up cinemas, shipping container architectures and supper clubs in order to begin to unpick the logics of the temporary city.
+     This interactive film explores three types of pop-up geography: pop-up cinemas, shipping container architectures and supper clubs.
     </p>
 
 
@@ -34,6 +56,5 @@
       </div>
       </a>
     </div>
-
 
   </div>
