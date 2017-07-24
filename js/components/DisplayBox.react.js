@@ -48,7 +48,7 @@ var DisplayBox = React.createClass({
 
 
     start: function(){
-        this.timer = setInterval(this.tick, 900);
+        this.timer = setInterval(this.tick, 600);
     },
 
     stop: function(){
@@ -122,8 +122,8 @@ var DisplayBox = React.createClass({
             <h2>or</h2>
             <div className="button">
                 <a href="#" onClick={this.outsideContainerCity}>See what's happening outside the temporary city</a>
-            </div>   
-            </div>      
+            </div>
+            </div>
             :
             <div></div>
           }
