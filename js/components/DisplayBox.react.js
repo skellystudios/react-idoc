@@ -48,7 +48,7 @@ var DisplayBox = React.createClass({
 
 
     start: function(){
-        this.timer = setInterval(this.tick, 600);
+        this.timer = setInterval(this.tick, 1800);
     },
 
     stop: function(){
