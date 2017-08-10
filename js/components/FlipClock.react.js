@@ -27,9 +27,8 @@ var FlipClock = React.createClass({
     //   second2Play();
     // }
 
-
 	if (this.state.time.date() == 31 &&
-		this.state.time.month() == 12) {
+		this.state.time.month() == 11) {
 		window.location = "end.html"
 	}
 
