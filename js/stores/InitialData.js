@@ -56,7 +56,7 @@ var InitialData = {
 		"long": -0.059745,
 		"open": false,
 		"starts": 212,
-		"ends": 312,
+		"ends": 400,
 		"next_item": 6,
 		"category": "container",
 		"next_item_title": "See more ways to customize a container..."
@@ -244,7 +244,7 @@ var InitialData = {
 		"long": -0.069816,
 		"open": false,
 		"starts": 252,
-		"ends": 352,
+		"ends": 452,
 		"next_item": 3,
 		"category": "reel",
 		"next_item_title": "Follow the river..."
@@ -259,7 +259,7 @@ var InitialData = {
 		"long": -0.098959,
 		"open": false,
 		"starts": 252,
-		"ends": 352,
+		"ends": 452,
 		"next_item": 16,
 		"category": "container",
 		"next_item_title": "See more ways to customize a container"
@@ -274,7 +274,7 @@ var InitialData = {
 		"long": -0.120113,
 		"open": false,
 		"starts": 252,
-		"ends": 352,
+		"ends": 452,
 		"next_item": 14,
 		"category": "reel",
 		"next_item_title": "Open more of London's closed doors "
