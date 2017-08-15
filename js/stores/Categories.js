@@ -10,15 +10,15 @@ var Categories = {
 	"edible": {
 		"name": "The Edible City",
 		"icon_url": "images/plate7_green.svg",
-		"height": 50,
-		"width": 50,
+		"height": 300,
+		"width": 300,
 		"blurb": "“At supper clubs paying guests are invited into the homes of strangers to be wined, dined and entertained. Here, domestic spaces become part of pop-up’s secret geographies.",
 	},
 	"reel": {
 		"name": "The Reel City",
 		"icon_url": "images/cinema35_red.svg",
-		"height": 50,
-		"width": 50,
+		"height": 220,
+		"width": 220,
 		"blurb": "If cinema has long reformulated visions of the city, and vice-versa, pop-up screenings bring ‘the reel’ and ‘the real’ into contact in new ways, transforming city spaces into versions of film worlds, giving spectators embodied encounters with film fictions and taking visitors on cinematic journeys along London’s waterways.",
 	},
 
