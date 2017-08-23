@@ -219,9 +219,9 @@ html {
   font-family:  'Helvetica Neue', Helvetica;
   text-transform: uppercase;
   font-weight: 400;
-  line-height: 5.5;
+  line-height: 12.5;
   letter-spacing: 5pt;
-  font-size: 20pt;
+  font-size: 10pt;
   visibility: hidden;
   display: block;
   width: 100%;

@@ -1,7 +1,7 @@
 var InitialData = {
 	"1": {
 		"id": "1",
-		"url": "https://www.youtube.com/watch?v=2UH_B-OS8ls&feature=youtu.be", // https://www.youtube.com/watch?v=yz12fXpYKdE",
+		"url": "https://www.youtube.com/watch?v=2UH_B-OS8ls", // https://www.youtube.com/watch?v=yz12fXpYKdE",
 		"title": "Mad Hatter's Brunch ",
 		"blurb": "Christabel is hosting today’s Mad Hatter’s Brunch in a ‘flat-share themed’ bar in Notting Hill. Usually she hosts events in her own flat in east London but today she is branching out to invite 40 guests ‘down the rabbit hole’ with her. The event takes inspiration from Alice and Wonderland, although on that basis it really should be an evening event. In the novel, the Mad Hatter is stuck forever at tea time (6pm), having been accused by the Queen of Hearts of murdering time.",
 		"visible": false,
@@ -16,7 +16,7 @@ var InitialData = {
 	},
 	"2": {
 		"id": "2",
-		"url": "https://youtu.be/vYhRCNJ6V-M", // https://www.youtube.com/watch?v=26Dmu-AB4a0
+		"url": "https://www.youtube.com/watch?v=vYhRCNJ6V-M", // https://www.youtube.com/watch?v=26Dmu-AB4a0
 		"title": "Backyard Cinema",
 		"blurb": "Backyard Cinema are staging an immersive screening of Baz Lurham’s Romeo and Juliet in St Mary’s Church in Baker Street. The event is staffed by The Montague’s Hawaiian shirt clad gang and accompanied by a live choir.",
 		"visible": true,
@@ -32,7 +32,7 @@ var InitialData = {
 	},
 	"3": {
 		"id": "3",
-		"url": "https://youtu.be/SfktiUWAagk",
+		"url": "https://www.youtube.com/watch?v=SfktiUWAagk",
 		"title": "Container City",
 		"blurb": "Out east along the Thames at Trinity Buoy Warf is container city, a development that is prototypical of London’s many container spaces. The containers, seemingly beached on the banks of the river are being used as offices, cafes, schools or studios. The sounds you can hear are from the floodtide listening post, which converts tidal flow data into notation. ",
 		"visible": true,
@@ -48,7 +48,7 @@ var InitialData = {
 	},
 	"4": {
 		"id": "4",
-		"url": "https://youtu.be/vg2VRi2ozfk", // https://www.youtube.com/watch?v=ibF41vCwfK4",
+		"url": "https://www.youtube.com/watch?v=vg2VRi2ozfk", // https://www.youtube.com/watch?v=ibF41vCwfK4",
 		"title": "Egle’s Container Shop",
 		"blurb": "Egle and her partner run a gender neutral clothing shop from their container in Netil Market.",
 		"visible": false,
@@ -63,7 +63,7 @@ var InitialData = {
 	},
 	"5": {
 		"id": "5",
-		"url": "https://youtu.be/9HlFNpbBVOc", //https://www.youtube.com/watch?v=D4ldpVKpa9U",
+		"url": "https://www.youtube.com/watch?v=9HlFNpbBVOc", //https://www.youtube.com/watch?v=D4ldpVKpa9U",
 		"title": "The Artworks",
 		"blurb": "The Artworks is a shipping container mall occupying the site of the recently demolished Heygate Housing estate. It is organised and managed by Lend Lease, the company responsible for the sites redevelopment.",
 		"visible": true,
@@ -79,7 +79,7 @@ var InitialData = {
 	},
 	"6": {
 		"id": "6",
-		"url": "https://youtu.be/urpuOK5n9Sk",
+		"url": "https://www.youtube.com/watch?v=urpuOK5n9Sk",
 		"title": "Grow up box",
 		"blurb": "The Grow Up Box is an urban farm in a shipping container. This futuristic mirco-farm is designed to demonstrate the potential of aquaponics for sustainable urban food supply.",
 		"visible": true,
@@ -95,7 +95,7 @@ var InitialData = {
 	"7": {
 		"id": "7",
 		// Short video "url": "https://www.youtube.com/watch?v=jhFDyDgMVUI",
-		"url": "https://youtu.be/XhwkfxJXgx4", //https://www.youtube.com/watch?v=fW8UQvPUQbs",
+		"url": "https://www.youtube.com/watch?v=XhwkfxJXgx4", //https://www.youtube.com/watch?v=fW8UQvPUQbs",
 		"title": "The Culinary Anthropologist",
 		"blurb": "The Culinary Anthropologist- Secret Kitchen: Anna, chef and anthropologist, runs supper clubs from her home in North London. Tonight is a Burns night themed event.",
 		"visible": true,
@@ -112,7 +112,7 @@ var InitialData = {
 	},
 	"8": {
 		"id": "8",
-		"url": "https://youtu.be/4fiVK1oMnAk", // https://www.youtube.com/watch?v=Xa_M1ZtT9-Y",
+		"url": "https://www.youtube.com/watch?v=4fiVK1oMnAk", // https://www.youtube.com/watch?v=Xa_M1ZtT9-Y",
 		"title": "Netil Market",
 		"blurb": "Sarah, manager of Netil Market, gives her views on the use of shipping containers by East London’s creative community.",
 		"visible": false,
@@ -127,7 +127,7 @@ var InitialData = {
 	},
 	"9": {
 		"id": "9",
-		"url": "https://youtu.be/56qXYzbV0tU", // https://www.youtube.com/watch?v=1hs4Xrxj7KM",
+		"url": "https://www.youtube.com/watch?v=56qXYzbV0tU", // https://www.youtube.com/watch?v=1hs4Xrxj7KM",
 		"title": "The Ship’s Kitchen",
 		"blurb": "Underground Supper club are hosting ‘the ship’s kitchen’, a burns night themed dinner in a converted Dutch barge where Alex, one of the chefs, lives with his girlfriend.",
 		"visible": false,
@@ -143,7 +143,7 @@ var InitialData = {
 	},
 	"10": {
 		"id": "10",
-		"url": "https://youtu.be/-J-ruzN9MUw", //https://www.youtube.com/watch?v=PLZsG6PIexg",
+		"url": "https://www.youtube.com/watch?v=-J-ruzN9MUw", //https://www.youtube.com/watch?v=PLZsG6PIexg",
 		"title": "The General’s Barber Shop",
 		"blurb": "A barber shop in a container: Hair cuts, beard trims, and free beer.",
 		"visible": true,
@@ -159,7 +159,7 @@ var InitialData = {
 	},
 	"11": {
 		"id": "11",
-		"url": "https://youtu.be/Vh4IcWzl3nw", // https://www.youtube.com/watch?v=IEryyWEIg4s",
+		"url": "https://www.youtube.com/watch?v=Vh4IcWzl3nw", // https://www.youtube.com/watch?v=IEryyWEIg4s",
 		"title": "Floating Cinema",
 		"blurb": "Floating Cinema are beginning a summer tour from Brentford to Bristol. Yannis is the boat's artist in resisdence. He accompanying the boat on its tour in order to record the sounds of the waterway with the help of local people. Today he is recording the sounds of Brentford.",
 		"visible": false,
@@ -175,7 +175,7 @@ var InitialData = {
 	},
 	"13": {
 		"id": "13",
-		"url": "https://youtu.be/_zt6OlHzO-8", // https://www.youtube.com/watch?v=1KkpivEsitE",
+		"url": "https://www.youtube.com/watch?v=_zt6OlHzO-8", // https://www.youtube.com/watch?v=1KkpivEsitE",
 		"title": "Pulp Kitchen",
 		"blurb": "Tonight Feed Me Films are running ‘Pulp Kitchen’. A menu of Pulp Fiction inspired drinks and snacks has been designed to immersive viewers in the film’s sensory landscape.",
 		"visible": false,
@@ -190,7 +190,7 @@ var InitialData = {
 	},
 	"14": {
 		"id": "14",
-		"url": "https://youtu.be/VQbPpJPnOvg",
+		"url": "https://www.youtube.com/watch?v=VQbPpJPnOvg",
 		"title": "Latitudinal Cuisine",
 		"blurb": "Latitudinal Cuisine is a regular supper club with the tag line ‘meet local, eat global’. Each day of the year is assigned a different longitude and latitude around which the events are usually themed. Tonight’s dinner, however, is themed more generally around travel and includes a performance from the band ‘Safar’ which means travel in Arabic. ",
 		"visible": false,
@@ -205,7 +205,7 @@ var InitialData = {
 	},
 	"15": {
 		"id": "15",
-		"url": "https://youtu.be/NsB8nkSwqhQ", //https://www.youtube.com/watch?v=nxI_TOg4rA8",
+		"url": "https://www.youtube.com/watch?v=NsB8nkSwqhQ", //https://www.youtube.com/watch?v=nxI_TOg4rA8",
 		"title": "Paradise Yard",
 		"blurb": "Alfie runs Paradise Yard where small creative businesses occupy shipping containers and a converted school house. ",
 		"visible": false,
@@ -221,7 +221,7 @@ var InitialData = {
 	},
 	"16": {
 		"id": "16",
-		"url": "https://youtu.be/R-_aoCIj6_s", // Updated
+		"url": "https://www.youtube.com/watch?v=R-_aoCIj6_s", // Updated
 		"title": "Kennington Upholstery ",
 		"blurb": "Kennington Upholstery give us a tour of their container and its extension-in-process.",
 		"visible": false,
@@ -236,7 +236,7 @@ var InitialData = {
 	},
 	"12": {
 		"id": "12",
-		"url": "https://youtu.be/vfbiPjc0GzY", // Updated
+		"url": "https://www.youtube.com/watch?v=vfbiPjc0GzY", // Updated
 		"title": "Anna Floating Cinema",
 		"blurb": "Anna, from the Floating Cinema, shares her insights.",
 		"visible": false,
@@ -251,7 +251,7 @@ var InitialData = {
 	},
 	"18": {
 		"id": "18",
-		"url": "https://youtu.be/7qZqj4K8UCQ", // Updated
+		"url": "https://www.youtube.com/watch?v=7qZqj4K8UCQ", // Updated
 		"title": "The Artworks2",
 		"blurb": "One year on, life at the Artwork continues while the construction of Elephant Park nears completion.",
 		"visible": false,
@@ -266,7 +266,7 @@ var InitialData = {
 	},
 	"19": {
 		"id": "19",
-		"url": "https://youtu.be/W9LCCLoYIxM", // Updated
+		"url": "https://www.youtube.com/watch?v=W9LCCLoYIxM", // Updated
 		"title": "Feed me Films: Nick",
 		"blurb": "Nick, from feed me films, shares his wisdom on the pop-up phenomenon.",
 		"visible": false,
